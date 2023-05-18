@@ -1,0 +1,312 @@
+*{
+    font-family: 'Lato';
+    box-sizing: border-box;
+}
+
+
+.pagamento{
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    margin-left: 16%;
+    margin-top: 5%;
+    margin-bottom: .9%;
+}
+
+.img--carteira{
+    padding-right: 25px;
+}
+
+.linha--pagamento{
+    width:75%;
+    border: 1px solid black;
+}
+
+.titulo--endereco{
+    background-color: black;
+    display: flex;
+    color: white;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.dados--cliente{
+    height: 25%;
+    border: 1px solid #C2C2C2;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+.nome--cpf{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 20px;
+}
+
+.endereco{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-bottom: 30px;
+}
+
+.dados--cadastrais{
+    width:254px ;
+    font-family: 'Lato', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.dados--cadastrais:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.metodo--pagamento{
+    background-color: black;
+    display: flex;
+    color: white;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.titulo--metodo--pagamento{
+    display: flex;
+    margin-top: 20px;
+}
+
+.titulo--cartao{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-left: 10px;
+}
+
+.linha--metodo{
+    max-width: 300px;
+    width: 100%;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.div--form{
+    display: flex;
+    flex-direction: column;
+}
+
+.div--form label{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.div--form input{
+    border: 1px solid #888888;
+    height: 40px;
+    width: 280px;
+}
+
+.div--form input::placeholder{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+    color: #ACACAC;
+}
+
+.forma--pagamento{
+    border: 1px solid #C2C2C2;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+
+}
+
+.confirmar--cartao{
+    width: 195px ;
+    font-family: 'Lato', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;       
+
+}
+
+.confirmar--cartao:hover{
+    text-decoration: underline;
+}
+
+.botao{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.titulo--compra{
+    background-color: black;
+    display: flex;
+    color: white;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.valor--final{
+    width: 368px;
+    border: 1px solid #C2C2C2;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+
+    margin-top: 10px;
+}
+
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal strong{
+    font-family: 'Lato', sans-serif;
+    font-size:15px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.subtotal p{
+    font-family: 'Lato', sans-serif;
+    font-size:15px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.frete{
+    display: flex;
+    justify-content: space-between;
+}
+
+.frete strong{
+    font-family: 'Lato', sans-serif;
+    font-size:15px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.frete p{
+    font-family: 'Lato', sans-serif;
+    font-size:15px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.linha--compra{
+    max-width: 340px;
+    width: 100%;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total strong{
+    font-family: 'Lato', sans-serif;
+    font-size:15px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.total p{
+    font-family: 'Lato', sans-serif;
+    font-size:15px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.confirmar--compra{
+    border: #F8A912;
+    width: 195px ;
+    font-family: 'Lato', sans-serif;
+    background-color: #F8A912;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;       
+
+}
+
+.botao--compra{
+        display: flex;
+        justify-content: flex-end;
+}
+
+.botao--compra:hover{
+    text-decoration: underline;
+}
+
+.corpo{
+    max-width: 80%;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 100px;
+    margin-left: 10%;
+}
+

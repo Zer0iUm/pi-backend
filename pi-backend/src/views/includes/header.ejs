@@ -1,0 +1,67 @@
+<header class="cabecalho">
+	<link rel="stylesheet" href="/css/header.css" />
+	<div class="menu">
+		<a class="menu__link" href="/homeStore">
+			<img class="logo" alt="Logo Goró" src="/img/logo goro 1.svg" />
+		</a>
+		<ul class="menu__lista">
+			<li class="menu__item">
+				<a class="menu__linka" href="/cervejas">CERVEJAS</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__linka" href="/listAcessories">ACESSÓRIOS</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__linka" href="/Kits">KITS</a>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<ul class="menu__profile">
+			 <% if (req.session.isLogged) { %> 
+			<li class="log">
+				<img class="login" alt="login" src="/img/profile.svg" />
+				<% if (req.session.username == 'Admin'){ %>
+				<a class="login" href="/accountAdmin"
+					><%= req.session.username.toUpperCase() %></a
+				>
+				<% } else { %>
+				<a class="login" href="/accountUser"
+					><%= req.session.username.toUpperCase() %></a
+				>
+				<%}%>
+			</li>
+
+			<% } else { %>
+
+			<li class="log">
+				<img class="login" alt="login" src="/img/profile.svg" />
+				<a class="login" href="/login">LOGIN</a>
+			</li>
+			<%}%>
+
+			<li class="car">
+				<img class="carrinho" alt="carrinho" src="/img/carrinho.svg" />
+				<a class="carrinho" href="/shoppingCart">CARRINHO</a>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<section class="pesquisa">
+	<form action="/search" method="GET" class="seach-form">
+	<div class="pesquisa__container">
+		
+		<input
+			name="keywords"
+			class="pesquisa__input"
+			type="text"
+			placeholder="Buscar no site"
+		/>
+		<button type="submit" class="search-form_button">
+			<img class="button-seach" alt="lupa" src="/img/lupa.svg" />
+		</button>
+		</form>
+	</div>
+</section>
+

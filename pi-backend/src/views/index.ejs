@@ -1,0 +1,289 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Goró</title>
+		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="stylesheet" href="/css/popUp.css" />
+		<script
+			src="https://kit.fontawesome.com/8efdacdf0c.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="/js/script.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+		/>
+	</head>
+	<body>
+		<div id="container-pop-up">
+			<section class="pop-up">
+				<img src="/img/closePopUp.png" onclick="closePopUp()" />
+				<h1 class="title-pop-up">VOCÊ TEM IDADE PARA TOMAR GORÓ?</h1>
+				<h4 class="text">CONFIRME A SUA IDADE</h4>
+				<div class="container-date">
+					<span>
+						<select name="day" class="day select">
+							<% for(let i=1; i<=31; i++) { %>
+							<option value="<%=i%>"><%= i%></option>
+							<% } %>
+						</select>
+					</span>
+					<span>
+						<select name="month" class="select month">
+							<option value="01">JANEIRO</option>
+							<option value="02">FEVEREIRO</option>
+							<option value="03">MARÇO</option>
+							<option value="04">ABRIL</option>
+							<option value="05">MAIO</option>
+							<option value="06">JUNHO</option>
+							<option value="07">JULHO</option>
+							<option value="08">AGOSTO</option>
+							<option value="09">SETEMBRO</option>
+							<option value="10">OUTUBRO</option>
+							<option value="11">NOVEMBRO</option>
+							<option value="12">DEZEMBRO</option>
+						</select>
+					</span>
+					<span>
+						<select name="year" id="year" class="select year">
+							<% for(let i=1930; i<=2023; i++) { %>
+							<option value="<%=i%>"><%=i%></option>
+							<% } %>
+						</select>
+					</span>
+				</div>
+			</section>
+			<div class="divider">
+				<hr class="amarelo" />
+				<hr class="vermelho" />
+				<hr class="preto" />
+			</div>
+
+			<button id="btn-popup" onclick="checkAge()">VERIFICAR IDADE</button>
+		</div>
+
+		<header>
+			<nav>
+				<ul class="nav-principal">
+					<li><a class="nav--link" href="#">INÍCIO</a></li>
+					<li>
+						<a class="nav--link" href="#info--menu">PORTFÓLIO</a>
+					</li>
+					<li>
+						<img alt="logo" src="/img/logo.png" class="logo" />
+					</li>
+					<li>
+						<a class="nav--link" href="#about">SOBRE NÓS</a>
+					</li>
+					<li>
+						<a class="nav--link" href="/homeStore" target="_blank"
+							>LOJA</a
+						>
+					</li>
+				</ul>
+				<ul class="nav-icones">
+					<li>
+						<a class="nav--link" href="#"
+							><i class="fa-brands fa-instagram"></i
+						></a>
+					</li>
+					<li>
+						<a class="nav--link" href="#"
+							><i class="fa-brands fa-youtube"></i
+						></a>
+					</li>
+					<li>
+						<a class="nav--link" href="#"
+							><i class="fa-brands fa-facebook"></i
+						></a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="carrossel">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div>
+							<img src="/img/banner topo 1.png" alt="banner" />
+						</div>
+						<div class="conteudo">
+							<p class="conteudo-um">CATEGORIA</p>
+							<h2>LOREM IPSUM</h2>
+							<p class="conteudo-dois">
+								Lorem ipsum dolor sit amet, consectetur<br />
+								adipiscing elit.sed ipsum tempor, fermentum<br />
+								lorem pellentesque,luctus tortor.
+							</p>
+							<a href="#">VER CATEGORIA</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div>
+							<img src="/img/banner topo 1.png" alt="banner" />
+						</div>
+						<div class="conteudo">
+							<p class="conteudo-um">CATEGORIA</p>
+							<h2>LOREM IPSUM</h2>
+							<p class="conteudo-dois">
+								Lorem ipsum dolor sit amet, consectetur<br />
+								adipiscing elit.sed ipsum tempor, fermentum<br />
+								lorem pellentesque,luctus tortor.
+							</p>
+							<a href="#">VER CATEGORIA</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div>
+							<img src="/img/banner topo 1.png" alt="banner" />
+						</div>
+						<div class="conteudo">
+							<p class="conteudo-um">CATEGORIA</p>
+							<h2>LOREM IPSUM</h2>
+							<p class="conteudo-dois">
+								Lorem ipsum dolor sit amet, consectetur<br />
+								adipiscing elit.sed ipsum tempor, fermentum<br />
+								lorem pellentesque,luctus tortor.
+							</p>
+							<a href="../lists/listAcessories/index.html"
+								>VER CATEGORIA</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</section>
+
+		<section id="info--menu">
+			<div class="btn--menu">
+				<button
+					class="btn--info"
+					id="title--info1"
+					onclick="changeInfo('show--info1')"
+				>
+					AMERICAN PALE ALE
+				</button>
+				<button
+					class="btn--info"
+					id="title--info2"
+					onclick="changeInfo('show--info2')"
+				>
+					DOUBLE IPA
+				</button>
+				<button
+					class="btn--info"
+					id="title--info3"
+					onclick="changeInfo('show--info3')"
+				>
+					BROWN ALE
+				</button>
+			</div>
+			<div id="show--info1" hidden>
+				<p>
+					A cerveja Pale Ale tem um teor alcoólico geralmente entre 4%
+					a 6% ABV e um corpo médio, com uma textura suave. Ao provar
+					uma Pale Ale, você pode esperar um sabor maltado com notas
+					de caramelo e torradas, equilibrado com um amargor moderado
+					do lúpulo, que pode ter sabores florais, frutados ou
+					terrosos.<br /><br />Essa cerveja é popular entre os amantes
+					de cervejas artesanais que procuram uma experiência de sabor
+					equilibrada, mas ainda assim com um pouco de amargor. É uma
+					cerveja versátil que pode ser apreciada sozinha ou
+					emparelhada com uma variedade de alimentos, desde carnes
+					grelhadas até pratos picantes.
+				</p>
+				<img
+					alt="info 1"
+					src="/img/american pale ale.png"
+					class="img--info"
+				/>
+			</div>
+			<div id="show--info2" class="show--info" hidden>
+				<p>
+					Uma Double IPA (India Pale Ale) é uma cerveja forte e
+					intensamente lupulada, com teor alcoólico geralmente
+					variando entre 7% a 10% ABV. Essa cerveja é caracterizada
+					por um amargor acentuado, que é equilibrado por um perfil de
+					malte rico e complexo. <br /><br />
+					Essa cerveja é muito popular entre os amantes de cerveja
+					artesanal que buscam uma experiência de sabor intensa e
+					complexa. Devido à sua alta graduação alcoólica e perfil de
+					sabor distintamente amargo, é uma cerveja mais apropriada
+					para beber devagar, apreciando cada gole e saboreando suas
+					nuances únicas.
+				</p>
+				<img alt="info 2" src="/img/double.png" class="img--info" />
+			</div>
+			<div id="show--info3" hidden>
+				<p>
+					Uma cerveja Brown Ale é um estilo de cerveja que geralmente
+					tem uma coloração marrom clara a escura, com um corpo médio
+					e um sabor maltado suave. Com teor alcoólico entre 4% e 6%.
+					A cerveja tem um sabor maltado característico, com notas de
+					caramelo, toffee e chocolate, além de um ligeiro amargor
+					proveniente do lúpulo.<br /><br />Essa cerveja é popular
+					entre os apreciadores de cerveja artesanal que procuram uma
+					experiência de sabor mais suave e menos amarga além de
+					textura cremosa.
+				</p>
+				<img alt="info 3" src="/img/brown.png" class="img--info" />
+			</div>
+		</section>
+
+		<main>
+			<section id="about">
+				<h2>SOBRE NÓS</h2>
+				<hr />
+				<div id="container">
+					<div class="coluna">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit. Nunc posuere nisl sit amet erat sodales, ut
+							dictum purus posuere. Pellentesque aliquam faucibus
+							pharetra. Pellentesque eget efficitur sem.
+							Suspendisse ut elit id mauris blandit ultrices. Cras
+							ultricies nisi ut luctus aliquam. Nunc semper,
+							mauris a lobortis rutrum, tortor velit dapibus quam,
+							a scelerisque est tortor ut eros. Duis lectus augue,
+							ultrices vel urna pharetra, consectetur aliquet
+							tellus.
+						</p>
+						<p>
+							Cras ultricies nisi ut luctus aliquam. Nunc semper,
+							mauris a lobortis rutrum, tortor velit dapibus quam,
+							a scelerisque est tortor ut eros. Duis lectus augue,
+							ultrices vel urna pharetra, consectetur aliquet
+							tellus.
+						</p>
+						<img alt="brindando" src="/img/image 6.png" />
+					</div>
+					<div class="coluna">
+						<img
+							alt="dois caras contemplando cerveja"
+							src="/img/image 1.png"
+						/>
+						<p>
+							Sed consequat odio at eros viverra, at ultricies
+							turpis ullamcorper. Class aptent taciti sociosqu ad
+							litora torquent per conubia nostra, per inceptos
+							himenaeos.
+						</p>
+						<button class="btn-geral">
+							ENTRAR EM CONTATO COM A GORÓ
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<%- include('./includes/footer.ejs') -%>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	</body>
+</html>

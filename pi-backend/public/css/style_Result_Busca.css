@@ -1,0 +1,336 @@
+*{
+    font-family: "Lato";
+}
+
+.body{
+    padding: 0;
+    margin: 0;
+}
+
+section span{
+    font-size: 25px; 
+    font-weight: 900;
+    line-height: 30px;
+    padding: 35px 0 21px 0;
+    display: flex;
+}
+
+section .container-todosprodutos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.linha-produtos{
+    border: 3px solid black;
+    width: 66%;
+    margin-bottom: 57px;
+    align-items: left;
+    position: absolute;
+    /* top: 2950px; */
+
+}
+
+
+.container-produtos{
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    flex-wrap: wrap;
+    padding: 23px;
+    box-sizing: border-box;
+        
+}
+
+.filtro_container-completo{
+    display: flex;
+}
+
+.item-cerveja{
+    position: relative;
+    display: inline-block;
+    margin: 60px;
+    border-radius: 100px;
+}
+
+.item-cerveja p.foto{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Lato';
+    line-height: 21px;
+    color: black;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.item-cerveja p.bebida{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Lato';
+    line-height: 18px;
+    color: #8b8b8b;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+
+}
+
+div .valor-produto{
+    font-size: 20px;
+    font-weight: 900;
+    font-size: 'Lato';
+    line-height: 24px;
+    color: black;
+    
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.item-cerveja p.nome-produto{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.item-sacola{
+    position: absolute;
+    margin: -50px 220px;
+    background-color: white;
+    border-radius: 50px;
+}
+
+
+section .container-todosProdutos .item-cerveja{
+    height: 360px;
+    width: 269px;
+    margin-top: 50px;
+    
+} 
+
+
+.verMaisProdutos{
+    background-color: black;
+    color: white;
+    font-family: 'Lato';
+    width: 252px;
+    height: 44px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 100px 100px 100px 340px;
+}
+
+.verMaisProdutos a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.filtros{
+    margin: 143px 100px;
+}
+
+h2.filtro{
+    display: flex;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+
+.linha-filtro{
+    border: 1px solid black ; 
+    width: 211px;   
+}
+
+.Preco{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 14px;
+}
+
+.Menor{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+.Maior{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.produto{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 14px;
+}
+
+.Camiseta{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.Térmico{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.AbridorDeCerveja{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+.balde{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.estilo{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 14px;
+
+}
+
+.AmericanPaleAle{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.DoubleIpa{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.BrownAle{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.percentualAlcool{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 14px;
+}
+
+.doisEmeio{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 1px 0;
+}
+
+.seis{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.dez{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.ibu{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 14px;
+}
+
+.sessentaEtres{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.trintaEtres{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.oitenta{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.embalagem{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 14px;
+}
+
+.Vidro{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}
+
+.Aluminio{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+    padding: 19px 0 10px 0;
+}

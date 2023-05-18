@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="./css/style-listAcessories.css" rel="stylesheet"/>
+    <link href="./css/reset.css" rel="stylesheet"/>
+    <link href="/css/produtos.css" rel="stylesheet" />
+    <script src="/js/lists.js"></script>
+    <title>Lista de Produtos - Acessórios</title>
+  </head>
+
+  <body>
+    <div class ="container">
+      <!----------------HEADER----------------->
+      <%- include('includes/header') %>
+  
+      <main>
+        
+        <div class="banner">
+          <img src="/img/banner menor cerveja 1.png" alt="banner" />
+        </div>
+        
+        <div class="filtro--cerveja--completo">
+          <div class="filtro--completo">
+
+            <h2 class="filtro">Filtros</h2>
+            <hr class="linha--filtro">
+            <h3 class="produto">Produto</h3>
+            <form action="/search" method="get" class="filter-form">
+              <section>
+                <div class="camiseta">
+                  <input type="checkbox" id="camiseta" name="filtro" value="camiseta" checked/>
+                  <label for="camiseta">Camiseta</label>
+                </div>
+
+                <div class="copo">
+                  <input type="checkbox" id="copo" name="filtro" value="copo" />
+                  <label for="copo">Copo</label>
+                </div>
+
+                <div class="termicos">
+                  <input type="checkbox" id="termicos" name="filtro" value="termicos" />
+                  <label for="termicos">Térmicos</label>
+                </div>
+
+                <div class="abridor">
+                  <input type="checkbox" id="abridor" name="filtro" value="abridor de cerveja"/>
+                  <label for="abridor">Abridor de Cerveja</label>
+                </div>
+
+                <div class="balde">
+                  <input type="checkbox" id="balde" name="filtro" value="balde"/>
+                  <label for="balde">Balde</label>
+                </div>
+
+              </section>
+
+              <section>
+                <h3 class="preco">Preço</h3>
+
+                <div class="menor--preco">
+                  <input type="checkbox" id="menor--preco" name="filtro" value="menor preço"/>
+                  <label for="menor--preco">Menor preço</label>
+                </div>
+
+                <div class="maior--preco">
+                  <input type="checkbox" id="maior--preco" name="filtro" value="maior preço"/>
+                  <label for="maior--preco">Maior preço</label>
+                </div>
+              </section>
+              <button id="btn-pesquisar" type="submit">Pesquisar</button>
+          </form>
+          </div>
+          <section class="container--cervejas">
+            
+            <h1 class="acessorios"><span>ACESSÓRIOS</span></h1>
+            <hr class="linha--cerveja" />
+            
+            <ul class="produtos__container">
+              <% products.forEach((product) =>{ %>
+                <li class="produto__container">
+                  <a href="/product" class="link__produto">
+                    <div class="produto__img">
+                      <img
+                      class="foto"
+                      
+                      src="/img/<%= product.image %>"
+                      
+                      alt="banner"
+                      />
+                      <div class="icone">
+                        <a href="#"
+                        ><img
+                        class="icone"
+                        
+                        src="/img/sacola.png"
+                        
+                        alt="banner"
+                        /></a>
+                      </div>
+                    </div>
+                    <div class="produto__conteudo">
+                      <p class="produto__nome"><%= product.name %></p>
+                      <p class="produto__descricao"><%= product.type %></p>
+                      <p class="produto__valor">R$ <%= product.price %></p>
+                    </div>
+                  </a>
+                </li>	
+                <% } )%>
+              </ul>
+              <a href="#" class="produtos__botao" style="display: block; width: fit-content; margin: 0 auto; margin-bottom: 60px; padding: 15px 30px; text-align: center;">VER TODOS OS PRODUTOS</a>
+              
+            </div>
+            
+
+
+		<%- include('includes/footer') %>
+    
+    <script src="/js/script.js"></script>
+  </body>
+</html>

@@ -5,7 +5,7 @@ const router = express.Router();
 /* Controllers */
 const mainController = require("../controllers/MainController");
 const productController = require("../controllers/ProductController");
-const userController = require("../controllers/userController");
+const userController = require("../controllers/UserController");
 
 //middlewares
 const log = require("../middlewares/log");
@@ -73,15 +73,21 @@ router.get("/erro", mainController.erro);
 // POST - EJS Create
 router.post(
   "/product",
+  authentication,
   upload.any(),
   body("name").notEmpty().withMessage("Nome do Produto deve ser informado"),
   productController.createEJS
 );
 
 // PUT - EJS Update
-router.put("/product/:id", upload.any(), productController.updateEJS);
+router.put(
+  "/product/:id",
+  authentication,
+  upload.any(),
+  productController.updateEJS
+);
 
 // DELETE - EJS Delete
-router.delete("/product/:id", productController.deleteEJS);
+router.delete("/product/:id", authentication, productController.deleteEJS);
 
 module.exports = router;

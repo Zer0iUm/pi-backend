@@ -1,52 +1,52 @@
-const users = require('../database/users.json');
-const fs = require('fs');
-const path = require('path');
-const usersFilePath = path.join(__dirname, '../database/users.json');
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
+const { User } = require("../models");
+const jwt = require("jsonwebtoken");
+const { validationResult } = require("express-validator");
 
-const userController = {
-	userLogin: (req, res) => {
-		const { email, password } = req.body;
-		const user = users.find(
-			u => u.email == email && u.password == password
-		);
-		if (user) {
-			// req.session = { ...user };
-			req.session.isLogged = true;
+const UserController = {
+  userLogin: async (req, res) => {
+    try {
+      const user = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      }); // encontra o usuário através do e-mail - e retorna o objeto
 
-			req.session.username = user.name;
-			req.session.email = user.email;
-			req.session.id = user.id;
-			res.redirect('/homeStore');
-			console.log(email);
-		} else {
-			req.session.errorMessage = true;
-			res.redirect('/login');
-			console.log('nao foi');
-		}
-	},
+      if (user && bcrypt.compareSync(req.body.password, user.password)) {
+        // compara a senha recebida no body com a senha gravada no banco de dados
+        const token = jwt.sign({ id: user.id, email: user.email }, "segredo"); // gera o token do usuário com JWT
+        res.status(200).json({ token });
+      } else res.status(400).json({ error: "Usuário ou Senha incorretos!" });
+    } catch (error) {
+      res.status(400).json({ error });
+    }
+  },
 
-	register: (req, res) => {
-		const newUserData = { id: users.length + 1, ...req.body };
+  register: async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) res.status(400).json({ error: errors.mapped() }); // ou array()
 
-		const hash = bcrypt.hashSync(newUserData.password, 10); // bcrypt
-		newUserData.password = hash; // salva na propriedade senha
+    try {
+      const user = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      }); // encontra o usuário através do e-mail - e retorna o objeto
 
-		users.push(newUserData);
+      if (!user) {
+        let newUser = {
+          ...req.body,
+        };
+        // delete newUser.pwdConfirm // remove propriedade pwdConfirm - porque não é necessário gravar no banco
 
-		const usersJson = fs.readFileSync(usersFilePath);
-		const usersArray = JSON.parse(usersJson);
-		usersArray.push(newUserData);
-		res.redirect('login');
+        const hash = bcrypt.hashSync(newUser.password, 10); // gera o hash da senha
+        newUser.password = hash; // salva na propriedade senha
 
-		fs.writeFileSync(
-			usersFilePath,
-			JSON.stringify(usersArray, null, 2),
-			() => {
-				res.redirect('login');
-			}
-		);
-	},
+        await User.create(newUser); // cria o registro no banco de dados
+      } else res.status(400).json({ error: "Usuário já cadastrado!" });
+    } catch (error) {
+      res.status(400).json({ error });
+    }
+  },
 };
-
-module.exports = userController;
+module.exports = UserController;

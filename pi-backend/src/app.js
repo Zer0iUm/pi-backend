@@ -1,10 +1,13 @@
 const log = require("./middlewares/log");
 const routes = require("./routes/index");
+//const cookieParser = require("cookie-parser");
 const path = require("path");
 const express = require("express");
 const methodOverride = require("method-override");
+const cors = require("cors");
 const bodyparser = require("body-parser");
-const session = require("express-session");
+
+//const session = require("express-session");
 const { v4: uuidv4 } = require("uuid");
 //const methodOverride = require('method-override') // métodos PUT e DELETE
 const app = express();
@@ -22,6 +25,8 @@ app.use(express.static("public"));
 app.use("/css", express.static(__dirname + "/css"));
 app.use("/img", express.static(__dirname + "/img"));
 app.use("/js", express.static(__dirname + "/js"));
+//app.use(cookieParser());
+app.use(cors());
 
 // métodos PUT e DELETE
 app.use(methodOverride("_method"));
@@ -29,13 +34,13 @@ app.use(methodOverride("_method"));
 // liberando acesso a pasta public
 app.use(express.static(path.resolve("public")));
 
-app.use(
+/* app.use(
   session({
     secret: uuidv4(), //  '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
     resave: false,
     saveUninitialized: true,
   })
-);
+); */
 // Middleware log - nível global
 // app.use(log)
 

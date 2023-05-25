@@ -3,11 +3,21 @@ const { Product, User, User_Adress } = require("../models");
 const users = require("../database/users.json");
 const { Op } = require("sequelize");
 
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const MainController = {
   index: async (req, res) => {
+    let search = "";
+    if (req.query.keywords) {
+      search = req.query.keywords;
+    }
+
     try {
-      const products = await Product.findAll();
+      const products = await Product.findAll({
+        where: {
+          name: {
+            [Op.substring]: search, // sequelize findAll na busca
+          },
+        },
+      });
 
       res.status(200).json(products);
     } catch (error) {
@@ -122,30 +132,6 @@ const MainController = {
 
   signUp: (req, res) => {
     res.render("signUp", { req });
-  },
-
-  search: async (req, res) => {
-    let search = req.query.keywords;
-    try {
-      const productsToSearch = await Product.findAll({
-        where: {
-          name: {
-            [Op.substring]: search, // sequelize findAll na busca
-          },
-        },
-      });
-      res.render("search", {
-        req,
-        products: productsToSearch,
-        search,
-      });
-    } catch (error) {
-      return res.status(500).json({ error: error.message });
-    }
-  },
-
-  erro: (req, res) => {
-    res.render("404", { req });
   },
 };
 

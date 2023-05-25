@@ -45,7 +45,7 @@ router.get("/accountAdmin", mainController.accountAdmin);
 
 router.get("/checkout", mainController.checkout);
 
-router.get("/search", mainController.search);
+//router.get("/search", mainController.search); Não usa mais o search
 
 router.get("/shoppingCart", authentication, mainController.shoppingCart);
 
@@ -60,7 +60,7 @@ router.post("/signUp", userController.register);
 
 router.get("/product/:id", productController.showById);
 
-router.get("/erro", mainController.erro);
+//router.get("/erro", mainController.erro); (teve um erro por causa dessa rota, por isso comentei - Camila)
 
 // # Product
 

@@ -20,7 +20,7 @@ const ProductController = {
           required: true,
         },
       });
-      res.status(201).json(product);
+      res.status(200).json(product);
     } catch (error) {
       res.status(400).json({ error });
     }
@@ -84,7 +84,7 @@ const ProductController = {
         });
 
         // res.redirect("/homeStore");
-        res.status(201).json({ msg: "Produto atualizado com sucesso" });
+        res.status(200).json({ msg: "Produto atualizado com sucesso" });
       } else return res.status(400).json({ error: "Produto não encontrado." });
     } catch (error) {
       res.status(400).json({ error });
@@ -112,7 +112,7 @@ const ProductController = {
           id: id,
         },
       });
-      res.status(201).json({ msg: "Produto deletado com sucesso" });
+      res.status(200).json({ msg: "Produto deletado com sucesso" });
     } catch (error) {
       res.status(400).json({ error });
     }

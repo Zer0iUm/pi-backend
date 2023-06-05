@@ -1,10 +1,16 @@
 import React from "react"
 
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+
 import './style.css'
 
 const Home = () => {
     return(
-        <h1>Teste Home</h1>
+        <>
+            <Header />
+            <Footer />
+        </>
     )
 }
 export default Home

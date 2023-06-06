@@ -386,7 +386,7 @@ h2.filtro{
     font-weight: 400;
     text-align: left;
     color: #acacac;
-    background: url("../img/lupa.svg") no-repeat;
+/*     background: url("../img/lupa.svg") no-repeat; */
     background-position: right;
     background-size: contain;
   }
@@ -408,7 +408,7 @@ h2.filtro{
     font-weight: 400;
     text-align: left;
     color: #acacac;
-    background: url("../img/lupa.svg") no-repeat;
+/*     background: url("../img/lupa.svg") no-repeat; */
     background-position: right;
     background-size: contain;
   }

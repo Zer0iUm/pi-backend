@@ -83,7 +83,7 @@
     font-weight: 400;
     text-align: left;
     color: #acacac;
-    background: url("./imgError/lupa.png") no-repeat;
+/*     background: url("./imgError/lupa.png") no-repeat; */
     background-position: right;
     background-size: contain; 
 }

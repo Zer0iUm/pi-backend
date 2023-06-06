@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
+body {
+	overflow: hidden;
+}
+
 #container-pop-up {
 	width: 36.938rem;
 	height: 32.625rem;
@@ -151,10 +155,10 @@ header {
 }
 
 nav {
-	display: flex;
-	flex-direction: row;
+	display: flex !important;
 	justify-content: center;
 	padding-top: 15px;
+	width: 100%;
 }
 
 nav ul.nav-principal {
@@ -222,7 +226,7 @@ nav ul.nav-icones i {
 	position: absolute;
 	text-align: left;
 	top: 30%;
-	right: 1%;
+	left: 55%;
 	color: #000000;
 }
 

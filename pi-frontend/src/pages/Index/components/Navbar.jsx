@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style.css';
 import { Link } from 'react-router-dom';
+import logo from '../../../images/logo.png';
 
 export default function Navbar() {
 	const navLinks = [
@@ -13,7 +14,7 @@ export default function Navbar() {
 			link: '#info--menu',
 		},
 		{
-			image: '../../../images/logo.png',
+			image: { logo },
 			alt: 'Logo goró',
 		},
 		{
@@ -50,7 +51,7 @@ export default function Navbar() {
 									<li>
 										<img
 											alt={item.alt}
-											src={item.image}
+											src={logo}
 											className='logo'
 										/>
 									</li>

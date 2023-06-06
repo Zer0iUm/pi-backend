@@ -13,7 +13,7 @@ const Router = () => {
           <Routes>
             <Route
               exact
-              path="/"
+              path="/homestore"
               element={<Home />}
             />
             <Route

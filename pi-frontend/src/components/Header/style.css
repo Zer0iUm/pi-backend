@@ -85,14 +85,11 @@ a {
 }
 
 .pesquisa {
-	max-width: 100%;
+	width: 100%;
 	padding: 1rem 10% 1.2rem 10%;
 	/* height: 50px; */
 	align-content: center;
 	background-color: #000000;
-}
-.pesquisa__container {
-	display: flex;
 }
 
 .pesquisa__input {
@@ -141,7 +138,7 @@ input[type='text']::-webkit-contacts-auto-fill-button {
 
 .search-form {
 	position: relative;
-	display: flex;
+	/* display: flex; */
 	align-items: center;
 }
 
@@ -156,16 +153,25 @@ input[type='text']::-webkit-contacts-auto-fill-button {
     border-radius: 100%;
   } */
 
+.pesquisa form {
+	max-width: 100% !important;
+	background-color: #000000 !important;
+	padding: 0 !important;
+	box-shadow: none !important;
+}
+
 .search-form_button {
 	position: absolute;
-	margin-top: 0.8%;
-	right: 11%;
+	/* margin-top: 0.2%; */
+	right: 10%;
 	/* height: 100%; */
-	background-color: #ffffff;
+	background-color: white !important;
 	border: none;
 	border-left: solid 1px var(--light-gray);
 	color: var(--gray);
 	cursor: pointer;
+	height: 28px;
+	top: 5px;
 }
 
 .buttom-seach {

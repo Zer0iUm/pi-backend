@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
 
-const listKits = () => {
+const ListKits = () => {
 	return (
 		<>
 			<Header />
@@ -135,4 +135,4 @@ const listKits = () => {
 	);
 };
 
-export default listKits;
+export default ListKits;

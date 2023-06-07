@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../images/logo goro 1.svg';
+import login from '../../images/profile.svg';
+import carrinho from '../../images/carrinho.svg';
+import lupa from '../../images/lupa.svg';
 
 import './style.css';
 
@@ -11,14 +15,9 @@ const Header = () => {
 	return (
 		<>
 			<header className='cabecalho'>
-				<link rel='stylesheet' to='/css/header.css' />
 				<div className='menu'>
 					<Link className='menu__link' to='/homestore'>
-						<img
-							className='logo'
-							alt='Logo Goró'
-							src='../image/logo goro 1.svg'
-						/>
+						<img className='logo' alt='Logo Goró' src={logo} />
 					</Link>
 					<ul className='menu__lista'>
 						<li className='menu__item'>
@@ -41,11 +40,7 @@ const Header = () => {
 				<div>
 					<ul className='menu__profile'>
 						<li className='log'>
-							<img
-								className='login'
-								alt='login'
-								src='/img/profile.svg'
-							/>
+							<img className='login' alt='login' src={login} />
 							<Link className='login' to='/login'>
 								LOGIN
 							</Link>
@@ -55,7 +50,7 @@ const Header = () => {
 							<img
 								className='carrinho'
 								alt='carrinho'
-								src='/img/carrinho.svg'
+								src={carrinho}
 							/>
 							<Link className='carrinho' to='/shoppingcart'>
 								CARRINHO
@@ -66,7 +61,7 @@ const Header = () => {
 			</header>
 
 			<section className='pesquisa'>
-				<form action='/search' method='GET' className='seach-form'>
+				<form action='/search' method='GET' className='search-form'>
 					<input
 						name='keywords'
 						className='pesquisa__input'
@@ -76,11 +71,7 @@ const Header = () => {
 						onChange={e => setKeywords(e.target.value)}
 					/>
 					<button type='submit' className='search-form_button'>
-						<img
-							className='button-seach'
-							alt='lupa'
-							src='/img/lupa.svg'
-						/>
+						<img className='button-seach' alt='lupa' src={lupa} />
 					</button>
 				</form>
 			</section>

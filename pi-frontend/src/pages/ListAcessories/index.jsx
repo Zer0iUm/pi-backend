@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
 
-const listAcessories = () => {
+const ListAcessories = () => {
 	return (
 		<>
 			<Header />
@@ -163,4 +163,4 @@ const listAcessories = () => {
 	);
 };
 
-export default listAcessories;
+export default ListAcessories;

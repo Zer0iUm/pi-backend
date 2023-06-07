@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
 
-const error404 = () => {
+const Error404 = () => {
 	return (
 		<>
 			<Header />
@@ -34,4 +34,4 @@ const error404 = () => {
 	);
 };
 
-export default error404;
+export default Error404;

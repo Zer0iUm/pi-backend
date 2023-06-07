@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
 
-const listBeer = () => {
+const ListBeer = () => {
 	return (
 		<>
 			<div className='container'>
@@ -240,4 +240,4 @@ const listBeer = () => {
 	);
 };
 
-export default listBeer;
+export default ListBeer;

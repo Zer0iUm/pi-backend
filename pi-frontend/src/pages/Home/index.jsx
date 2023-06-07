@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Slide from '../../components/slide/Slide';
+import banner from '../../images/banner goró 1.png';
 
 import './style.css';
 
@@ -10,9 +11,10 @@ const Home = () => {
 	return (
 		<>
 			<Header />
-			<section className='carrossel'>
+			<Slide banner={banner} type='Acessórios' title='Goro Style' />
+			{/* <section className='carrossel'>
 				<div className='swiper'>
-					<div className='swiper-wrapper'>
+					<div classNaACESSÓRIOSme='swiper-wrapper'>
 						<div className='swiper-slide'>
 							<div>
 								<img
@@ -21,7 +23,7 @@ const Home = () => {
 								/>
 							</div>
 							<div className='conteudo'>
-								<p className='conteudo-um'>ACESSÓRIOS</p>
+								<p className='conteudo-um'></p>
 								<h2>GORÓ STYLE</h2>
 								<p className='conteudo-dois'>
 									Chique e confortável! Garanta a camiseta que
@@ -74,25 +76,7 @@ const Home = () => {
 					<div className='swiper-button-prev'></div>
 					<div className='swiper-button-next'></div>
 				</div>
-			</section>
-
-			<section className='categoria'>
-				<h3>CATEGORIAS</h3>
-				<div className='categoria__container'>
-					<Link to='/cervejas' className='categoria__amarelo'>
-						<img src='/img/Group 4.svg' />
-						<h4>CERVEJA</h4>
-					</Link>
-					<Link to='/listAcessories' className='categoria__preto'>
-						<img src='/img/Vector.svg' />
-						<h4>ACESSÓRIOS</h4>
-					</Link>
-					<Link to='/Kits' className='categoria__vermelho'>
-						<img src='/img/Vector_.svg' />
-						<h4>KITS</h4>
-					</Link>
-				</div>
-			</section>
+			</section> */}
 
 			<section className='produtos'>
 				<h3>TODOS OS PRODUTOS</h3>

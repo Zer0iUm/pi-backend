@@ -5,9 +5,10 @@ import doubleIpa from '../../../images/double.png';
 import brownIpa from '../../../images/brown.png';
 
 export default function About() {
-	const [show, setShow] = useState();
+	const [show, setShow] = useState(1);
 	const beers = [
 		{
+			id: 0,
 			name: 'AMERICAN PALE ALE',
 			desc: [
 				'A cerveja Pale Ale tem um teor alcoólico geralmente entre 4% Link 6% ABV e um corpo médio, com uma textura suave. Ao provar uma Pale Ale, você pode esperar um sabor maltado com notas de caramelo e torradas, equilibrado com um amargor moderado do lúpulo, que pode ter sabores florais, frutados ou terrosos.',
@@ -18,6 +19,7 @@ export default function About() {
 			color: 'black',
 		},
 		{
+			id: 1,
 			name: 'DOUBLE IPA',
 			desc: [
 				'Uma Double IPA (India Pale Ale) é uma cerveja forte e intensamente lupulada, com teor alcoólico geralmente variando entre 7% Link 10% ABV. Essa cerveja é caracterizada por um amargor acentuado, que é equilibrado por um perfil de malte rico e complexo.',
@@ -28,6 +30,7 @@ export default function About() {
 			color: 'white',
 		},
 		{
+			id: 2,
 			name: 'BROWN ALE',
 			desc: [
 				'Uma cerveja Brown Ale é um estilo de cerveja que geralmente tem uma coloração marrom clara Link escura, com um corpo médio e um sabor maltado suave. Com teor alcoólico entre 4% e 6%. A cerveja tem um sabor maltado característico, com notas de caramelo, toffee e chocolate, além de um ligeiro amargor proveniente do lúpulo.',
@@ -38,6 +41,7 @@ export default function About() {
 			color: 'white',
 		},
 	];
+
 	return (
 		<section id='info--menu'>
 			<div className='btn--menu'>
@@ -46,7 +50,7 @@ export default function About() {
 						<button
 							className='btn--info'
 							id='title--info1'
-							onclick="changeInfo('show--info1')"
+							onClick={e => setShow(beer.id)}
 							style={{
 								color: beer.color,
 								backgroundColor: beer.bgColor,
@@ -57,19 +61,21 @@ export default function About() {
 					);
 				})}
 			</div>
-			<div id='show--info1' className='show--info'>
-				{beers.map(beer => {
-					return (
-						<>
-							<p>{beer.desc}</p>
-							<img
-								alt='info 1'
-								src={beer.image}
-								className='img--info'
-							/>
-						</>
-					);
-				})}
+
+			<div
+				id='show--info1'
+				className='show--info'
+				style={{
+					backgroundColor: beers[show].bgColor,
+					color: beers[show].color,
+				}}
+			>
+				<p>{beers[show].desc}</p>
+				<img
+					alt='info 1'
+					src={beers[show].image}
+					className='img--info'
+				/>
 			</div>
 		</section>
 	);

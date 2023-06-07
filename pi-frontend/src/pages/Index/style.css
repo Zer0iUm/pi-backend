@@ -60,7 +60,8 @@ body {
 	border: 2px solid #1e0202;
 	background-color: #fbf7f2;
 	font-size: 1.25rem;
-	padding-left: 1.25rem;
+	padding: 0 !important;
+	padding-left: 1.25rem !important;
 }
 
 .day {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -8,10 +8,10 @@ import Navbar from './components/Navbar';
 import banner from '../../images/banner topo 1.png';
 import About from './components/About';
 
-const index = () => {
+const Index = () => {
 	return (
 		<>
-			{/* <AgeVerification /> */}
+			<AgeVerification />
 			<Navbar />
 			<section className='carrossel'>
 				<div className='swiper'>
@@ -133,4 +133,4 @@ const index = () => {
 	);
 };
 
-export default index;
+export default Index;

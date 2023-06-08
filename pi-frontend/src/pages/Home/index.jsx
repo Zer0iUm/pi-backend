@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -6,8 +6,21 @@ import Slide from '../../components/slide/Slide';
 import banner from '../../images/banner goró 1.png';
 
 import './style.css';
+import api from '../../services/api';
 
 const Home = () => {
+	const [products, setProducts] = useState([])
+
+	useEffect(() => {
+		loadProducts()
+	}, [])
+
+	const loadProducts = async () => {
+		const response = await api.get('product')
+		setProducts(response.data)
+
+	}
+
 	return (
 		<>
 			<Header />
@@ -82,16 +95,19 @@ const Home = () => {
 				<h3>TODOS OS PRODUTOS</h3>
 				<div className='alignProdutos'>
 					<ul className='produtos__container'>
-						{/* 			<% for(let i=0; i<products.length; i++){ %>
+
+
+ 						{products.map((product) => ( 
 						<li className="produto__container">
-							<a
-								href="/product/<%= products[i].id%>"
+							<Link
+								to={"/product"}
 								className="link__produto"
+								state={{ id: product.id }}
 							>
 								<div className="produto__img">
 									<img
 										className="foto"
-										src="/img/<%= products[i].image %>"
+										src={`http://localhost:3000/img/${product.image}`}
 										alt="banner"
 									/>
 									<div className="icone">
@@ -105,18 +121,18 @@ const Home = () => {
 								</div>
 								<div className="produto__conteudo">
 									<p className="produto__nome">
-										<%= products[i].name %>
+										 {product.name }
 									</p>
 									<p className="produto__descricao">
-										<%= products[i].type %>
+										{product.type }
 									</p>
 									<p className="produto__valor">
-										R$ <%= products[i].price %>
+										R$  {product.price}
 									</p>
 								</div>
-							</a>
+							</Link>
 						</li>
-					<% } %> */}
+						))}
 					</ul>
 				</div>
 

@@ -7,7 +7,7 @@ import api from "../../services/api";
 import "./style.css";
 
 const product = () => {
-    const location = useLocation()
+    /* const location = useLocation()
 
     const [product, setProduct] = useState()
 
@@ -18,9 +18,9 @@ const product = () => {
 	const loadProduct = async () => {
 		const response = await api.get(`product/${location.state.id}`)
 		setProduct(response.data)
-	}
+	}  */
 
-    return(
+/*     return( */
         <>
         <Header />
 {/* 
@@ -208,7 +208,7 @@ const product = () => {
  */}
             <Footer />
         </>
-    );
-};
+    /*  );  */
+ }; 
 
 export default product;

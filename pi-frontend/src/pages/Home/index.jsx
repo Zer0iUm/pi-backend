@@ -7,6 +7,7 @@ import banner from '../../images/banner goró 1.png';
 
 import './style.css';
 import api from '../../services/api';
+import DemoCarousel from './components/carousel';
 
 const Home = () => {
 	const [products, setProducts] = useState([])
@@ -24,73 +25,8 @@ const Home = () => {
 	return (
 		<>
 			<Header />
-			<Slide banner={banner} type='Acessórios' title='Goro Style' />
-			{/* <section className='carrossel'>
-				<div className='swiper'>
-					<div classNaACESSÓRIOSme='swiper-wrapper'>
-						<div className='swiper-slide'>
-							<div>
-								<img
-									src='/img/banner goró 1.png'
-									alt='banner'
-								/>
-							</div>
-							<div className='conteudo'>
-								<p className='conteudo-um'></p>
-								<h2>GORÓ STYLE</h2>
-								<p className='conteudo-dois'>
-									Chique e confortável! Garanta a camiseta que
-									<br />
-									combina com a sua cerveja favorita.
-								</p>
-								<Link to='#'>VER CAMISETAS</Link>
-							</div>
-						</div>
-						<div className='swiper-slide'>
-							<div>
-								<img
-									src='/img/banner goró 1.png'
-									alt='banner'
-								/>
-							</div>
-							<div className='conteudo'>
-								<p className='conteudo-um'>ACESSÓRIOS</p>
-								<h2>GORÓ STYLE</h2>
-								<p className='conteudo-dois'>
-									Chique e confortável! Garanta a camiseta que
-									<br />
-									combina com a sua cerveja favorita.
-								</p>
-								<Link to='#'>VER CAMISETAS</Link>
-							</div>
-						</div>
-						<div className='swiper-slide'>
-							<div>
-								<img
-									src='/img/banner goró 1.png'
-									alt='banner'
-								/>
-							</div>
-							<div className='conteudo'>
-								<p className='conteudo-um'>ACESSÓRIOS</p>
-								<h2>GORÓ STYLE</h2>
-								<p className='conteudo-dois'>
-									Chique e confortável! Garanta a camiseta que
-									<br />
-									combina com a sua cerveja favorita.
-								</p>
-								<Link to='../lists/listAcessories/index.html'>
-									VER CAMISETAS
-								</Link>
-							</div>
-						</div>
-					</div>
-					<div className='swiper-pagination'></div>
-					<div className='swiper-button-prev'></div>
-					<div className='swiper-button-next'></div>
-				</div>
-			</section> */}
-
+			<DemoCarousel />
+		{/* 	<Slide banner={banner} type='Acessórios' title='Goro Style' /> */}
 			<section className='produtos'>
 				<h3>TODOS OS PRODUTOS</h3>
 				<div className='alignProdutos'>
@@ -114,7 +50,7 @@ const Home = () => {
 										<a href="#"
 											><img
 												className="icone"
-												src="/img/sacola.png"
+												src="http://localhost:3000/img/sacola.png"
 												alt="banner"
 										/></a>
 									</div>

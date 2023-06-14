@@ -20,6 +20,14 @@ const Login = () => {
 						autocomplete='username'
 						id='email'
 					/>
+					<Input
+					placeholder='E-mail'
+					name='email'
+					autocomplete='username'
+					id='email'
+					value={email}
+					></Input>
+
 					<input
 						type='password'
 						name='password'

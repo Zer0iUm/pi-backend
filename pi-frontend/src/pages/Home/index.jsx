@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import Slide from '../../components/slide/Slide';
 import banner from '../../images/banner goró 1.png';
 
-import './style.css';
+import styles from './style.css';
 import api from '../../services/api';
 import DemoCarousel from './components/carousel';
 

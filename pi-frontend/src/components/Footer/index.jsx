@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import './style.css';
 
@@ -14,7 +15,7 @@ const Footer = () => {
 						<img
 							className='logo'
 							alt='Logo Goró'
-							src='/img/logo goro 1.svg'
+							src='http://localhost:3000/img/logo goro 1.svg'
 						/>
 					</div>
 
@@ -22,19 +23,19 @@ const Footer = () => {
 						<ul>
 							<h5>INSTITUCIONAL</h5>
 							<li>
-								<a href='/'> Home </a>
+								<Link to='/'> Home </Link>
 							</li>
 							<li>
-								<a href='/#info--menu'> Portfólio </a>
+								<Link to='/#info--menu'> Portfólio </Link>
 							</li>
 							<li>
-								<a href='#'> Contato </a>
+								<Link to='#'> Contato </Link>
 							</li>
 							<li>
-								<a href='/#about'> Sobre nós </a>
+								<Link to='/#about'> Sobre nós </Link>
 							</li>
 							<li>
-								<a href='/homeStore'> Loja </a>
+								<Link to='/homeStore'> Loja </Link>
 							</li>
 						</ul>
 					</div>
@@ -43,10 +44,10 @@ const Footer = () => {
 						<ul>
 							<h5>LEGAL</h5>
 							<li>
-								<a href='#'> Termos de uso </a>
+								<Link to='#'> Termos de uso </Link>
 							</li>
 							<li>
-								<a href='#'> Política de privacidade </a>
+								<Link to='#'> Política de privacidade </Link>
 							</li>
 						</ul>
 
@@ -54,31 +55,31 @@ const Footer = () => {
 							<h5>REDES SOCIAIS</h5>
 							<ul className='footer__lista'>
 								<li className='footer__item'>
-									<a className='footer__link' href='#'>
+									<Link className='footer__link' to='#'>
 										<img
 											className='redes__logo'
 											alt='Instagram'
-											src='/img/Instagram - Negative.svg'
+											src='http://localhost:3000/img/Instagram - Negative.svg'
 										/>
-									</a>
+									</Link>
 								</li>
 								<li className='footer__item'>
-									<a className='footer__link' href='#'>
+									<Link className='footer__link' to='#'>
 										<img
 											className='redes__logo'
 											alt='YouTube'
-											src='/img/YouTube - Negative.svg'
+											src='http://localhost:3000/img/YouTube - Negative.svg'
 										/>
-									</a>
+									</Link>
 								</li>
 								<li className='footer__item'>
-									<a className='footer__link' href='#'>
+									<Link className='footer__link' to='#'>
 										<img
 											className='redes__logo'
 											alt='Facebook'
-											src='/img/Facebook - Negative.svg'
+											src='http://localhost:3000/img/Facebook - Negative.svg'
 										/>
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>

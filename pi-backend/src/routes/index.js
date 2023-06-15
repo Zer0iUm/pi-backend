@@ -5,7 +5,7 @@ const router = express.Router();
 /* Controllers */
 const mainController = require("../controllers/MainController");
 const productController = require("../controllers/ProductController");
-const userController = require("../controllers/UserController");
+const userController = require("../controllers/userController");
 
 //middlewares
 const log = require("../middlewares/log");
@@ -69,6 +69,21 @@ router.get("/product/:id", productController.showById);
 
 // GET - EJS Update Form - View
 //router.get('/product/update/:id', productController.updateFormEJS); testeando
+
+router.get('/admin', (req, res) => {
+  const admins = [
+    { id: 1, name: 'Admin 1' },
+    { id: 2, name: 'Admin 2' },
+  ];
+  const userId = req.query.userId; 
+  const isAdmin = admins.some(admin => admin.id === parseInt(userId));
+
+  if (isAdmin) {
+    res.send('Você é um administrador.');
+  } else {
+    res.status(403).send('Acesso não autorizado.'); 
+  }
+});
 
 // POST - EJS Create
 router.post(

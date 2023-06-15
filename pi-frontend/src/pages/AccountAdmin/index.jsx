@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
 
-const accountAdmin = () => {
+const AccountAdmin = () => {
 	return (
 		<>
 			<Header />
@@ -26,4 +26,4 @@ const accountAdmin = () => {
 	);
 };
 
-export default accountAdmin;
+export default AccountAdmin;

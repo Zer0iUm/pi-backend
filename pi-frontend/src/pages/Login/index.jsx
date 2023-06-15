@@ -1,10 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Input from '../../components/Input';
+import { useState } from 'react';
+import api from "../../services/api"
+
 import './style.css';
 
 const Login = () => {
+	const navigate = useNavigate()
+
+	const [email, setEmail] = useState('')
+	const [pwd, setPwd] = useState('')
+  
+	const handleLogin = async () => {
+	  const auth = {
+		email: email,
+		pwd: pwd
+	  }
+  
+	  try {
+		const response = await api.post('/login', auth)
+  
+		document.cookie = `auth=${response.data.token}; expires=${new Date(2100, 0, 1)}`
+  
+		alert('Login realizado!')
+		navigate('/')
+  
+	  } catch (error) {
+		alert(error.response.data)
+	  }
+	}
 	return (
 		<>
 			<Header />

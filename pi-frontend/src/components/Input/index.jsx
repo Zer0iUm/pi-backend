@@ -1,19 +1,20 @@
 import React from "react";
 
-const Input = ({ id, type = 'text', placeholder, label }) => {
-return (
+const Input = ({ id, type = "text", placeholder, label, ...rest }) => {
+  return (
     <>
-    <label htmlFor={id} className="form-label"
-    >
+      <label htmlFor={id} className="form-label">
         {label}
-    </label>
-    <input
-    id={id}
-    className="form-input"
-    type={type}
-    placeholder={placeholder}
-    {...rest}
-    />
+      </label>
+      <input
+        id={id}
+        className="form-input"
+        type={type}
+        placeholder={placeholder}
+        {...rest}
+      />
     </>
-)
-}
+  );
+};
+
+export default Input;

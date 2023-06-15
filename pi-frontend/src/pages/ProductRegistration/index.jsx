@@ -1,16 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { getCookie } from "../../utils";
+import api from "../../services/api"
 
-const productRegistration = () => {
+
+
+const ProductRegistration = () => {
+  const navigate = useNavigate()
   const [name, setName] = useState("");
   const [idProductType, setIdProductType] = useState(1);
   const [price, setPrice] = useState(0);
@@ -44,14 +46,14 @@ const productRegistration = () => {
 
       <h1>Cadastro de Produtos</h1>
 
-      {typeof errors !== "undefined" ? (
+{/*       {typeof error !== "undefined" ? (
         <ul>
           {error.map((error) => {
             return <li>{error.msg}</li>;
           })}
         </ul>
       ) : null}
-
+ */}
       <form action="/product" method="POST" enctype="multipart/form-data">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" />
@@ -92,4 +94,4 @@ const productRegistration = () => {
   );
 };
 
-export default productRegistration;
+export default ProductRegistration;

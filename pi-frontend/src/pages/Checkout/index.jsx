@@ -4,7 +4,7 @@
 // import Footer from "../../components/Footer";
 // import "./style.css";
 
-// const checkout = () => {
+// const Checkout = () => {
 //     return(
 //         <>
 //             <Header />
@@ -131,4 +131,4 @@
 //     );
 // };
 
-// export default checkout;
+// export default Checkout;

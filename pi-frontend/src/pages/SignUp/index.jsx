@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
@@ -12,7 +11,7 @@ const SignUp = () => {
 			<section class='section__cadastro'>
 				<div class='cadastro'>
 					<div class='cadastro__titulo'>
-						<img src='/img/login_cadastro.svg' />
+						<img src='/img/login_cadastro.svg' alt='Cadastro' />
 						<h3>DADOS PESSOAIS</h3>
 					</div>
 
@@ -71,7 +70,7 @@ const SignUp = () => {
 					<section class='section__cadastro'>
 						<div class='cadastro'>
 							<div class='cadastro__titulo'>
-								<img src='/img/cadeado.svg' />
+								<img src='/img/cadeado.svg' alt='Cadeado' />
 								<h3>DADOS DE LOGIN</h3>
 							</div>
 
@@ -114,7 +113,7 @@ const SignUp = () => {
 					>
 						<div class='cadastro'>
 							<div class='cadastro__titulo'>
-								<img src='/img/casa.svg' />
+								<img src='/img/casa.svg' alt='Casa' />
 								<h3>DADOS DE ENDEREÇO</h3>
 							</div>
 

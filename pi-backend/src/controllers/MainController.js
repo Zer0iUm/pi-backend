@@ -29,10 +29,8 @@ const MainController = {
     try {
       const products = await Product.findAll();
 
-      res.render("homeStore", {
-        req,
-        products,
-      });
+      res.json(products)
+
     } catch (error) {
       res.status(400).json({ error });
     }
@@ -46,10 +44,8 @@ const MainController = {
         },
       });
 
-      res.render("listBeer", {
-        req,
-        products,
-      });
+      res.json(products)
+
     } catch (error) {
       res.status(400).json({ error });
     }
@@ -63,10 +59,8 @@ const MainController = {
         },
       });
 
-      res.render("listAcessories", {
-        req,
-        products,
-      });
+      res.json(products)
+
     } catch (error) {
       res.status(400).json({ error });
     }
@@ -80,10 +74,8 @@ const MainController = {
         },
       });
 
-      res.render("listKits", {
-        req,
-        products,
-      });
+      res.json(products)
+
     } catch (error) {
       res.status(400).json({ error });
     }
@@ -121,10 +113,9 @@ const MainController = {
     try {
       const products = await Product.findAll();
 
-      res.render("shoppingCart", {
-        req,
-        products,
-      });
+      res.json(products)
+
+
     } catch (error) {
       res.status(400).json({ error });
     }

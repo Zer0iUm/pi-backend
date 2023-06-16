@@ -21,17 +21,17 @@ const Header = () => {
 					</Link>
 					<ul className='menu__lista'>
 						<li className='menu__item'>
-							<Link className='menu__linka' to='/listbeer'>
+							<Link className='menu__linka' to='/cervejas' state={{product_type_id: "1"}}>
 								CERVEJAS
 							</Link>
 						</li>
 						<li className='menu__item'>
-							<Link className='menu__linka' to='/listacessories'>
+							<Link className='menu__linka' to='/listacessories' state={{product_type_id: "2"}}>
 								ACESSÓRIOS
 							</Link>
 						</li>
 						<li className='menu__item'>
-							<Link className='menu__linka' to='/listkits'>
+							<Link className='menu__linka' to='/kits' state={{product_type_id: "3"}}>
 								KITS
 							</Link>
 						</li>

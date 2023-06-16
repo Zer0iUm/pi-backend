@@ -11,7 +11,7 @@ export default function Category() {
 					<img src='/img/Group 4.svg' />
 					<h4>CERVEJA</h4>
 				</Link>
-				<Link to='/listAcessories' className='categoria__preto'>
+				<Link to='/listacessories' className='categoria__preto' state={{product_type_id: "2"}}>
 					<img src='/img/Vector.svg' />
 					<h4>ACESSÓRIOS</h4>
 				</Link>

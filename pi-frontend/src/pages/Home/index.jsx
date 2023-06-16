@@ -22,6 +22,23 @@ const Home = () => {
 			<Header />
 			<DemoCarousel />
 			{/* 	<Slide banner={banner} type='Acessórios' title='Goro Style' /> */}
+				<section class="categoria">
+				<h3>CATEGORIAS</h3>
+				<div class="categoria__container">
+					<Link to="/cervejas" class="categoria__amarelo" state={{product_type_id: "1"}}>
+						<img src="http://localhost:3000/img/Group 4.svg" />
+						<h4>CERVEJA</h4>
+					</Link>
+					<Link to="/listacessories" class="categoria__preto" state={{product_type_id: "2"}}>
+						<img src="http://localhost:3000/img/Vector.svg" />
+						<h4>ACESSÓRIOS</h4>
+					</Link>
+					<Link to="/kits" class="categoria__vermelho" state={{product_type_id: "3"}}>
+						<img src="http://localhost:3000/img/Vector_.svg" />
+						<h4>KITS</h4>
+					</Link>
+				</div>
+			</section>
 			<section className='produtos'>
 				<h3>TODOS OS PRODUTOS</h3>
 				<div className='alignProdutos'>

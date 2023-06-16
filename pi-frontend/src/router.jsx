@@ -56,11 +56,11 @@ const Router = () => {
               element={<ListAcessories />}
             />
             <Route
-              path="/listbeer"
+              path="/cervejas"
               element={<ListBeer />}
             />
             <Route
-              path="/listkits"
+              path="/kits"
               element={<ListKits />}
             />
             <Route

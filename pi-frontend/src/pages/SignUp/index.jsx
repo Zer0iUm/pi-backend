@@ -28,8 +28,6 @@ const SignUp = () => {
     }) 
 }
  
-
-
   return (
     <>
       <Header />

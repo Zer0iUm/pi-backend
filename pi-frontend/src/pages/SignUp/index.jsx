@@ -8,22 +8,22 @@ const SignUp = () => {
 		<>
 			<Header />
 
-			<section class='section__cadastro'>
-				<div class='cadastro'>
-					<div class='cadastro__titulo'>
+			<section className='section__cadastro'>
+				<div className='cadastro'>
+					<div className='cadastro__titulo'>
 						<img src='/img/login_cadastro.svg' alt='Cadastro' />
 						<h3>DADOS PESSOAIS</h3>
 					</div>
 
-					<div class='cadastro__estapa'>
-						<p class='cadastro__circuloamarelo'>1</p>
-						<p class='cadastro__circulocinza'>2</p>
-						<p class='cadastro__circulocinza'>3</p>
+					<div className='cadastro__estapa'>
+						<p className='cadastro__circuloamarelo'>1</p>
+						<p className='cadastro__circulocinza'>2</p>
+						<p className='cadastro__circulocinza'>3</p>
 					</div>
 				</div>
 
-				<form class='form' method='post' action='/S'>
-					<div class='teste'>
+				<form className='form' method='post' action='/S'>
+					<div className='teste'>
 						<input
 							type='nome'
 							placeholder='Nome'
@@ -37,7 +37,7 @@ const SignUp = () => {
 							name='lastname'
 						/>
 					</div>
-					<div class='teste'>
+					<div className='teste'>
 						<input
 							type='dataNascimento'
 							placeholder='Data de Nascimento | 00/00/0000'
@@ -51,7 +51,7 @@ const SignUp = () => {
 							name='genre'
 						/>
 					</div>
-					<div class='teste'>
+					<div className='teste'>
 						<input
 							type='CPF'
 							placeholder='CPF | 000.000.000-00'
@@ -65,23 +65,23 @@ const SignUp = () => {
 							name='phone'
 						/>
 					</div>
-					<span class='form__erro'>Mensagem de erro</span>
+					<span className='form__erro'>Mensagem de erro</span>
 
-					<section class='section__cadastro'>
-						<div class='cadastro'>
-							<div class='cadastro__titulo'>
+					<section className='section__cadastro'>
+						<div className='cadastro'>
+							<div className='cadastro__titulo'>
 								<img src='/img/cadeado.svg' alt='Cadeado' />
 								<h3>DADOS DE LOGIN</h3>
 							</div>
 
-							<div class='cadastro__estapa'>
-								<p class='cadastro__circulocinza'>1</p>
-								<p class='cadastro__circuloamarelo'>2</p>
-								<p class='cadastro__circulocinza'>3</p>
+							<div className='cadastro__estapa'>
+								<p className='cadastro__circulocinza'>1</p>
+								<p className='cadastro__circuloamarelo'>2</p>
+								<p className='cadastro__circulocinza'>3</p>
 							</div>
 						</div>
 
-						<div class='teste'>
+						<div className='teste'>
 							<input
 								type='email'
 								placeholder='E-mail'
@@ -93,7 +93,7 @@ const SignUp = () => {
 								placeholder='Confirme seu e-mail'
 							/>
 						</div>
-						<div class='teste'>
+						<div className='teste'>
 							<input
 								type='password'
 								placeholder='Senha'
@@ -108,23 +108,23 @@ const SignUp = () => {
 					</section>
 
 					<section
-						class='section__cadastro'
+						className='section__cadastro'
 						style={{ marginBottom: '4.5rem' }}
 					>
-						<div class='cadastro'>
-							<div class='cadastro__titulo'>
+						<div className='cadastro'>
+							<div className='cadastro__titulo'>
 								<img src='/img/casa.svg' alt='Casa' />
 								<h3>DADOS DE ENDEREÇO</h3>
 							</div>
 
-							<div class='cadastro__estapa'>
-								<p class='cadastro__circulocinza'>1</p>
-								<p class='cadastro__circulocinza'>2</p>
-								<p class='cadastro__circuloamarelo'>3</p>
+							<div className='cadastro__estapa'>
+								<p className='cadastro__circulocinza'>1</p>
+								<p className='cadastro__circulocinza'>2</p>
+								<p className='cadastro__circuloamarelo'>3</p>
 							</div>
 						</div>
 
-						<div class='teste'>
+						<div className='teste'>
 							<input
 								id='viaCep'
 								type='cep'
@@ -134,12 +134,12 @@ const SignUp = () => {
 								minlength='8'
 							/>
 							<input
-								class='teste vazio'
+								className='teste vazio'
 								aria-hidden='true'
 								disabled='disabled'
 							/>
 						</div>
-						<div class='teste'>
+						<div className='teste'>
 							<input
 								id='cidade'
 								type='cidade'
@@ -147,12 +147,17 @@ const SignUp = () => {
 								name='city'
 							/>
 							<select id='state' name='state'>
-								<option class='select' disabled selected hidden>
+								<option
+									className='select'
+									disabled
+									selected
+									hidden
+								>
 									Selecione seu estado
 								</option>
 							</select>
 						</div>
-						<div class='teste'>
+						<div className='teste'>
 							<input
 								id='endereco'
 								type='endereco'
@@ -165,7 +170,7 @@ const SignUp = () => {
 								name='complement'
 							/>
 						</div>
-						<div class='teste'>
+						<div className='teste'>
 							<input
 								type='numero'
 								placeholder='Número'
@@ -179,8 +184,8 @@ const SignUp = () => {
 							/>
 						</div>
 
-						<div class='teste'>
-							<button type='submit' class='cadastro__botao'>
+						<div className='teste'>
+							<button type='submit' className='cadastro__botao'>
 								CRIAR CONTA
 							</button>
 						</div>

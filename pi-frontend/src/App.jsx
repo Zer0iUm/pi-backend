@@ -1,11 +1,7 @@
 import React from 'react';
 import Router from './router';
-
 import MyContext from './contexts/myContext';
-import './App.css';
-
-
-
+import './global.css';
 
 function App() {
 	return (

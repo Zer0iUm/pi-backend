@@ -1,27 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
 .mainContainer {
 	padding-left: 6rem;
 	padding-right: 6rem;
 }
 
-.btn-user {
+.btn_user {
 	display: block;
 	padding: 2rem;
 	background-color: lightgray;
 	margin: 2rem;
 }
 
-.btn-user:hover {
+.btn_user:hover {
 	background-color: rgb(181, 181, 181);
 }
 
-button {
+.btn_user button {
 	border: none;
 	background-color: inherit;
 }
@@ -33,18 +26,6 @@ button {
 .editUserActive {
 	display: flex;
 	flex-direction: column;
-}
-
-* {
-	margin: 0;
-}
-
-body,
-html {
-	font-family: 'Lato';
-	background-color: rgb(241, 237, 232);
-	overflow-x: hidden;
-	scroll-behavior: smooth;
 }
 
 .btn-geral {

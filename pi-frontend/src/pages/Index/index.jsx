@@ -7,8 +7,6 @@ import Portfolio from './components/Portfolio';
 import Slide from '../../components/slide/Slide';
 import banner from '../../images/banner topo 1.png';
 
-import './style.css';
-
 const Index = () => {
 	return (
 		<>

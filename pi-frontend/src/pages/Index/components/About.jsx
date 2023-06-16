@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../style.css';
 import paleAle from '../../../images/american pale ale.png';
 import doubleIpa from '../../../images/double.png';
 import brownIpa from '../../../images/brown.png';
+import '../style.css';
 
 export default function About() {
 	const [show, setShow] = useState(1);

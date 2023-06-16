@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { useLocation } from 'react-router-dom';
+import api from "../../services/api";
 import './style.css';
 
-const ListBeer = () => {
+const Cervejas = () => {
+	const location = useLocation();
+    
+    const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    loadProducts();
+  }, []);
+
+  const loadProducts = async () => {
+
+    const response = await api.get("/cervejas");
+ 	console.log(response.data)
+	    setProducts(response.data);
+  };
 	return (
 		<>
 			<div className='container'>
@@ -12,7 +28,7 @@ const ListBeer = () => {
 				<main className='main--flex'>
 					<div className='banner'>
 						<img
-							src='/img/banner menor cerveja 1.png'
+							src='http://localhost:3000/img/banner menor cerveja 1.png'
 							alt='banner'
 						/>
 					</div>
@@ -176,30 +192,31 @@ const ListBeer = () => {
 
 							<div className='container--produtos'>
 								<ul>
-									{/* {products.forEach(product => {
-										return ( */}
+									{products.map((product) => ( 
+
 									<li className='produto__container'>
 										<Link
 											to='/product'
 											className='link__produto'
+											state={{id: product.id}}
 										>
 											<div className='produto__img'>
 												<img
 													className='foto'
-													src='/img/<%= product.image %>'
+													src={`http://localhost:3000/img/${product.image}`}
 													alt='banner'
 												/>
 												<div className='icone'>
 													<Link to='#'>
 														<img
 															className='icone'
-															src='/img/sacola.png'
+															src='http://localhost:3000/img/sacola.png'
 															alt='banner'
 														/>
 													</Link>
 												</div>
 											</div>
-											{/* <div className='produto__conteudo'>
+											<div className='produto__conteudo'>
 														<p className='produto__nome'>
 															{product.name}
 														</p>
@@ -209,11 +226,11 @@ const ListBeer = () => {
 														<p className='produto__valor'>
 															R${product.price}
 														</p>
-													</div> */}
+													</div> 
 										</Link>
 									</li>
-									{/* );
-									})} */}
+									
+									))}
 								</ul>
 							</div>
 							<Link
@@ -240,4 +257,4 @@ const ListBeer = () => {
 	);
 };
 
-export default ListBeer;
+export default Cervejas;

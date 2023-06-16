@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { useLocation } from 'react-router-dom';
+import api from "../../services/api";
 import './style.css';
 
 const ListKits = () => {
+	const location = useLocation();
+    
+    const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    loadProducts();
+  }, []);
+
+  const loadProducts = async () => {
+    const response = await api.get(`/kits`);
+ 	console.log(response.data)
+	    setProducts(response.data);
+  };
+
 	return (
 		<>
 			<Header />
 			<main>
 				<div className='banner'>
-					<img src='/img/banner menor kit 1.png' alt='banner' />
+					<img src='http://localhost:3000/img/banner menor kit 1.png' alt='banner' />
 				</div>
 				<div className='filtro--cerveja--completo'>
 					<div className='filtro--completo'>
@@ -77,27 +93,28 @@ const ListKits = () => {
 						<hr className='linha--kits' />
 
 						<ul className='produtos__container'>
-							{/* {products.forEach(product => {
-									return ( */}
+							{products.map((product) => (
+
+							
 							<li className='produto__container'>
-								<Link to='/product' className='link__produto'>
+								<Link to='/product' className='link__produto' state={{id: product.id}}>
 									<div className='produto__img'>
 										<img
 											className='foto'
-											// src={`/img/${product.image}`}
+											src={`http://localhost:3000/img/${product.image}`}
 											alt='banner'
 										/>
 										<div className='icone'>
 											<Link to='#'>
 												<img
 													className='icone'
-													src='/img/sacola.png'
+													src='http://localhost:3000/img/sacola.png'
 													alt='banner'
 												/>
 											</Link>
 										</div>
 									</div>
-									{/* <div className='produto__conteudo'>
+									<div className='produto__conteudo'>
 													<p className='produto__nome'>
 														{product.name}
 													</p>
@@ -107,11 +124,10 @@ const ListKits = () => {
 													<p className='produto__valor'>
 														R${product.price}
 													</p>
-												</div> */}
+												</div> 
 								</Link>
 							</li>
-							{/* );
-								})} */}
+							))}
 						</ul>
 						<Link
 							to='#'

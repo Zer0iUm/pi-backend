@@ -1,27 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { useLocation } from 'react-router-dom';
-import api from "../../services/api";
-import Input from "../../components/Input";
-import "./style.css";
+import api from '../../services/api';
+import Input from '../../components/Input';
+import './style.css';
 
 const ShoppingCart = () => {
-    const location = useLocation();
-    const [product, setProduct] = useState([]);
+	const location = useLocation();
+	const [product, setProduct] = useState([]);
 
-    useEffect(() => {
-        loadProduct();
-      }, []);
-    
-      const loadProduct = () => {
-        if (product !== null) {
-          const productId = product.id;
-          // Restante da lógica
-        }
-      };
-
+	useEffect(() => {
+		loadProduct();
+	}, []);
     return(
         <>
             <Header />
@@ -86,15 +78,24 @@ const ShoppingCart = () => {
 				<div>
 				<span className="subtil">SUBTOTAL</span>
 				</div>
-				<span>R$ 00,00</span>
+				<div>
+					<h2 className='topo_carrinho'>
+						<li>
+							<h2>QUANTIDADE</h2>
+						</li>
+						<li>
+							<h2>VALOR UNITÁRIO</h2>
+						</li>
+						<li>
+							<h2>VALOR TOTAL</h2>
+						</li>
+					</h2>
 				</div>
 				<span className="frete2">
 				<span className="subtil">FRETE</span>
 				<span id="frete_valor2">R$ 00,00</span>
 				</span>
-
-			<div id="linha-horizontal2"></div>
-
+					<div id='linha-horizontal2'></div>
 				<div className="total_compra">
 				<span>TOTAL</span>
 				<span>R$ 00,00</span>
@@ -104,12 +105,10 @@ const ShoppingCart = () => {
 				<div>
 					<button className="botao_amarelo" type="button">FINALIZAR COMPRA</button>
 				</div>
-			</div>
-			</div>
-		</section>
-            <Footer />
-        </>
-        );
-    };
+			</section>
+			<Footer />
+		</>
+	);
+};
 
 export default ShoppingCart;

@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Slide from '../../components/slide/Slide';
-import banner from '../../images/banner goró 1.png';
-
-import './style.css';
 import api from '../../services/api';
 import DemoCarousel from './components/carousel';
+import './style.css';
 
 const Home = () => {
 	const [products, setProducts] = useState([]);

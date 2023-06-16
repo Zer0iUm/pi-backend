@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
 
-const accountUser = () => {
+const AccountUser = () => {
 	return (
 		<>
 			<Header />
@@ -48,4 +48,4 @@ const accountUser = () => {
 	);
 };
 
-export default accountUser;
+export default AccountUser;

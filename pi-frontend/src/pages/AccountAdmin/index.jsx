@@ -4,20 +4,20 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './style.css';
 
-const accountAdmin = () => {
+const AccountAdmin = () => {
 	return (
 		<>
 			<Header />
-			<div class='mainContainer'>
+			<div className='mainContainer'>
 				{/* <h1>Olá, {req.session.username}</h1> */}
 
-				<Link class='btn-user' to='/productregistration'>
+				<Link className='btn-user' to='/productregistration'>
 					<button>Adicionar produto</button>
 				</Link>
-				<Link class='btn-user' to='/productupdate'>
+				<Link className='btn-user' to='/productupdate'>
 					<button>Editar produto</button>
 				</Link>
-				<Link class='btn-user' to='/logout'>
+				<Link className='btn-user' to='/logout'>
 					<button>Sair</button>
 				</Link>
 			</div>
@@ -26,4 +26,4 @@ const accountAdmin = () => {
 	);
 };
 
-export default accountAdmin;
+export default AccountAdmin;

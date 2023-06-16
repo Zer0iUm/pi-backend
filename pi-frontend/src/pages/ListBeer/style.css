@@ -1,421 +1,412 @@
-*{
-    font-family: 'Lato';
+* {
+	font-family: 'Lato';
 }
 
-
-.banner img{
-    width: 100%;
+.banner img {
+	width: 100%;
 }
 
-section span{
-    font-size: 25px; 
-    font-weight: 900;
-    line-height: 30px;
-    padding: 35px 0 21px 0;
-    display: flex;
+section span {
+	font-size: 25px;
+	font-weight: 900;
+	line-height: 30px;
+	padding: 35px 0 21px 0;
+	display: flex;
 }
 
-section .container--produtos{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+section .container--produtos {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
-
-.linha--cerveja{
-    border: 2px solid black;
-    width: 99%;
-    margin-bottom: 57px;
+.linha--cerveja {
+	border: 2px solid black;
+	width: 99%;
+	margin-bottom: 57px;
 }
-.container--cervejas{
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-    }
-
-.filtro--cerveja--completo{
-    display: flex;
-}
-    
-.item p.goro{
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'Lato';
-    line-height: 216px;
-    color: black;
+.container--cervejas {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
 }
 
-.item p.cerva{
-    font-size: 15px;
-    font-weight: 400;
-    font-family: 'Lato';
-    line-height: 18px;
-    color: #8B8B8B;
+.filtro--cerveja--completo {
+	display: flex;
 }
 
-.item p.valor{
-    font-size: 20px;
-    font-weight: 900;
-    font-family: 'Lato';
-    line-height: 24px;
-    color: black;
+.item p.goro {
+	font-size: 18px;
+	font-weight: 400;
+	font-family: 'Lato';
+	line-height: 216px;
+	color: black;
 }
 
-.img--cerveja{
-    position: relative;
-    display: inline-block;
+.item p.cerva {
+	font-size: 15px;
+	font-weight: 400;
+	font-family: 'Lato';
+	line-height: 18px;
+	color: #8b8b8b;
 }
 
-.item--sacola{
-    position: absolute;
-    margin: -50px 220px;
-    background-color: white;
-    border-radius: 50px; 
+.item p.valor {
+	font-size: 20px;
+	font-weight: 900;
+	font-family: 'Lato';
+	line-height: 24px;
+	color: black;
 }
 
-
-section .container--produtos .item{
-    height: 360px;
-    width:269px;
+.img--cerveja {
+	position: relative;
+	display: inline-block;
 }
 
-.ver--produtos{
-    background-color: black;
-    color: white;
-    font-family: 'Lato';
-    width: 252px;
-    height: 44px;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 400px;
-}
-.ver--produtos a{
-    text-decoration: none;
-    color: white;
+.item--sacola {
+	position: absolute;
+	margin: -50px 220px;
+	background-color: white;
+	border-radius: 50px;
 }
 
-.filtro--completo{
-    margin: 143px 100px;
+section .container--produtos .item {
+	height: 360px;
+	width: 269px;
 }
 
-h2.filtro{
-    display: flex;
-    font-size: 25px;
-    line-height: 30px;
-    font-weight: 700;
-    margin-bottom: 16px;
+.ver--produtos {
+	background-color: black;
+	color: white;
+	font-family: 'Lato';
+	width: 252px;
+	height: 44px;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 400px;
+}
+.ver--produtos a {
+	text-decoration: none;
+	color: white;
 }
 
-.linha--filtro{
-    border: 1px solid #8F8F8F;
-    width: 211px;
+.filtro--completo {
+	margin: 143px 100px;
 }
 
-.estilo{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
-    margin-top: 14px;
+h2.filtro {
+	display: flex;
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 700;
+	margin-bottom: 16px;
 }
 
-.american--pale--ale{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #8F8F8F;
-    padding: 19px 0 10px 0;
+.linha--filtro {
+	border: 1px solid #8f8f8f;
+	width: 211px;
 }
 
-.double--ipa{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.estilo {
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+	margin-top: 14px;
 }
 
-.brown--ale{
-    font-size: 20px;
-    font-weight: 400;
-    color: #8F8F8F;
-    line-height: 24px;
+.american--pale--ale {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding: 19px 0 10px 0;
 }
 
-
-.preco{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 20px 0 16px 0;
+.double--ipa {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.menor--preco{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px; 
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.brown--ale {
+	font-size: 20px;
+	font-weight: 400;
+	color: #8f8f8f;
+	line-height: 24px;
 }
 
-.maior--preco{
-    font-size: 20px;
-    font-weight: 400;
-    color: #8F8F8F;
-    line-height: 24px; 
-
+.preco {
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+	padding: 20px 0 16px 0;
 }
 
-.alcool{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 20px 0 16px 0;
+.menor--preco {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.dois-e-meio{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px; 
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.maior--preco {
+	font-size: 20px;
+	font-weight: 400;
+	color: #8f8f8f;
+	line-height: 24px;
 }
 
-.seis{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px; 
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.alcool {
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+	padding: 20px 0 16px 0;
 }
 
-.dez{
-    font-size: 20px;
-    font-weight: 400;
-    color: #8F8F8F;
-    line-height: 24px;  
+.dois-e-meio {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.ibu{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 20px 0 16px 0;
+.seis {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.sessenta--e--tres{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px; 
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.dez {
+	font-size: 20px;
+	font-weight: 400;
+	color: #8f8f8f;
+	line-height: 24px;
 }
 
-.trinta--e--tres{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px; 
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.ibu {
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+	padding: 20px 0 16px 0;
 }
 
-.oitenta{
-    font-size: 20px;
-    font-weight: 400;
-    color: #8F8F8F;
-    line-height: 24px;  
+.sessenta--e--tres {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.embalagem{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 20px 0 16px 0;
+.trinta--e--tres {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.vidro{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px; 
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.oitenta {
+	font-size: 20px;
+	font-weight: 400;
+	color: #8f8f8f;
+	line-height: 24px;
 }
 
-.aluminio{
-    font-size: 20px;
-    font-weight: 400;
-    color: #8F8F8F;
-    line-height: 24px;  
+.embalagem {
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+	padding: 20px 0 16px 0;
 }
 
-.linha--filtro{
-    border: 1px solid #8F8F8F;
-    width: 211px;
+.vidro {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.produto{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
-    margin-top: 14px;
+.aluminio {
+	font-size: 20px;
+	font-weight: 400;
+	color: #8f8f8f;
+	line-height: 24px;
 }
 
-.camiseta{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #8F8F8F;
-    padding: 19px 0 10px 0;
+.linha--filtro {
+	border: 1px solid #8f8f8f;
+	width: 211px;
 }
 
-.copo{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.produto {
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+	margin-top: 14px;
 }
 
-.termicos{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.camiseta {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding: 19px 0 10px 0;
 }
 
-.abridor{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #8F8F8F;
-    padding-bottom: 10px;
+.copo {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-.balde{
-    font-size: 20px;
-    font-weight: 400;
-    color: #8F8F8F;
-    line-height: 24px;
+.termicos {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
-
-.preco{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 20px 0 16px 0;
+.abridor {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8f8f8f;
+	padding-bottom: 10px;
 }
 
+.balde {
+	font-size: 20px;
+	font-weight: 400;
+	color: #8f8f8f;
+	line-height: 24px;
+}
+
+.preco {
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+	padding: 20px 0 16px 0;
+}
 
 .produtos-botao {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 5px 15px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 15ms;
-    width: 20%;
+	background-color: #000000;
+	color: #ffffff;
+	padding: 5px 15px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: 15ms;
+	width: 20%;
 }
 
 .produtos-botao:hover {
-    background-color: #606060;
+	background-color: #606060;
 }
 
 .produtos-botao {
-    font-size: 15px;
-  }
+	font-size: 15px;
+}
 
+/* RESPONSIVIDADE */
+@media (max-width: 360px) {
+	.produtos h3 {
+		margin-top: 1px;
+		font-size: 15px;
+		border-bottom: solid;
+		text-align: left;
+		font-weight: 700;
+	}
 
-  /* RESPONSIVIDADE */
-  @media (max-width: 360px) {
-    .produtos h3 {
-      margin-top: 1px;
-      font-size: 15px;
-      border-bottom: solid;
-      text-align: left;
-      font-weight: 700;
-    }
-  
-    .produtos__botao {
-      font-size: 15px;
-    }
-  }
-  @media (max-width: 630px) {
-    .produtos h3 {
-      margin-top: 1px;
-      font-size: 18px;
-      border-bottom: solid;
-      text-align: left;
-      font-weight: 700;
-    }
-  
-    .produtos-botao {
-      font-size: 10px;
-      padding: 0.5px;
-    }
-  }
+	.produtos__botao {
+		font-size: 15px;
+	}
+}
+@media (max-width: 630px) {
+	.produtos h3 {
+		margin-top: 1px;
+		font-size: 18px;
+		border-bottom: solid;
+		text-align: left;
+		font-weight: 700;
+	}
 
-  .pesquisa {
-    background: #000000;
-    color: var(--branco);
-    text-align: center;
-    padding: 0.4em 2em;
-  }
-  
-  .pesquisa__input {
-    font-family: "Lato";
-    background-color: #ffffff;
-    color: #000000;
-    border-radius: 24px;
-    padding: 0.9rem;
-    width: 84%;
-    padding-left: 2rem;
-  }
-  
-  .pesquisa__input::placeholder {
-    padding-left: 2rem;
-    font-family: "Lato";
-    font-size: 16px;
-    font-weight: 400;
-    text-align: left;
-    color: #acacac;
-/*     background: url("../img/lupa.svg") no-repeat; */
-    background-position: right;
-    background-size: contain;
-  }
-  
-  /*=============== Responsividade =============*/
-  @media (max-width:630px) {
-    .pesquisa {
-      width: 100%;
-      padding: 2px;
-    }
-   .pesquisa__input {
-    padding: 0.6rem;
-    width: 100%;
-  }
-  .pesquisa__input::placeholder {
-    padding-left: 0.2rem;
-    font-family: "Lato";
-    font-size: 15px;
-    font-weight: 400;
-    text-align: left;
-    color: #acacac;
-/*     background: url("../img/lupa.svg") no-repeat; */
-    background-position: right;
-    background-size: contain;
-  }
-    
-  }
-  
-  .produtos {
+	.produtos-botao {
+		font-size: 10px;
+		padding: 0.5px;
+	}
+}
+
+.pesquisa {
+	background: #000000;
+	color: var(--branco);
+	text-align: center;
+	padding: 0.4em 2em;
+}
+
+.pesquisa__input {
+	font-family: 'Lato';
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 24px;
+	padding: 0.9rem;
+	width: 84%;
+	padding-left: 2rem;
+}
+
+.pesquisa__input::placeholder {
+	padding-left: 2rem;
+	font-family: 'Lato';
+	font-size: 16px;
+	font-weight: 400;
+	text-align: left;
+	color: #acacac;
+	/*     background: url("../img/lupa.svg") no-repeat; */
+	background-position: right;
+	background-size: contain;
+}
+
+/*=============== Responsividade =============*/
+@media (max-width: 630px) {
+	.pesquisa {
+		width: 100%;
+		padding: 2px;
+	}
+	.pesquisa__input {
+		padding: 0.6rem;
+		width: 100%;
+	}
+	.pesquisa__input::placeholder {
+		padding-left: 0.2rem;
+		font-family: 'Lato';
+		font-size: 15px;
+		font-weight: 400;
+		text-align: left;
+		color: #acacac;
+		/*     background: url("../img/lupa.svg") no-repeat; */
+		background-position: right;
+		background-size: contain;
+	}
+}
+
+.produtos {
 	padding: 5rem 8rem;
 	font-family: 'Lato';
 	text-align: center;
@@ -563,4 +554,3 @@ hr {
 		padding: 0.5rem;
 	}
 }
-  

@@ -191,7 +191,7 @@ const Cervejas = () => {
 							<hr className='linha--cerveja' />
 
 							<div className='container--produtos'>
-								<ul>
+								<ul className='produtos__container'>
 									{products.map((product) => ( 
 
 									<li className='produto__container'>

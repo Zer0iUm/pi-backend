@@ -160,8 +160,9 @@ const ListAcessories = () => {
 						))} 
 						
 					</ul>
-				</section>
-				<a
+
+
+					<Link
 					href='#'
 					className='produtos__botao'
 					style={{
@@ -174,7 +175,9 @@ const ListAcessories = () => {
 					}}
 				>
 					VER TODOS OS PRODUTOS
-				</a>
+				</Link>
+				</section>
+				
 			</div>
 			<Footer />
 		</>

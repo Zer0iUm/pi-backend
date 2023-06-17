@@ -119,7 +119,7 @@ const Product = () => {
 					<img
 						alt='Imagem principal'
 						src={displayImage}
-						id='display'
+						id={styles.display}
 					/>
 				</section>
 				<section id={styles.info_produto}>

@@ -45,7 +45,7 @@ const Login = () => {
 		<>
 			<Header />
 			<section className={styles.form}>
-				<form
+				<div
 					className={styles.form__login}
 					method='post'
 					action='/login'
@@ -62,7 +62,6 @@ const Login = () => {
 						onChange={e => setEmail(e.target.value)}
 						value={email}
 					/>
-
 					<input
 						type='password'
 						name='password'
@@ -89,7 +88,7 @@ const Login = () => {
 							Crie uma conta
 						</Link>
 					</p>
-				</form>
+				</div>
 			</section>
 			<Footer />
 		</>

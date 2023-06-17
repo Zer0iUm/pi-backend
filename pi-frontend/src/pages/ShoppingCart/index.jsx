@@ -6,14 +6,29 @@ import { useLocation } from 'react-router-dom';
 import api from '../../services/api';
 import Input from '../../components/Input';
 import './style.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart } from '../../reducer/cartSlice';
 
 const ShoppingCart = () => {
   const location = useLocation();
   const [product, setProduct] = useState([]);
+  const [productsCart, setProductsCart] = useState();
+
+  let carrinho = useSelector(state => state.cart)
+
+  const dispatch = useDispatch()
+
+  const handleRemove = (id) => {
+    dispatch(removeFromCart(id))
+  }
 
   useEffect(() => {
-    /* loadProduct(); */
-  }, []);
+		setProductsCart(carrinho)
+  }, [carrinho]);
+
+  useEffect(() => {
+	console.log("Produtos", productsCart)
+  }, [productsCart]);
 
   return (
     <>
@@ -52,25 +67,53 @@ const ShoppingCart = () => {
         </div>
       </section>
 
-      {product.map((product, index) => {
-        return (
-          <section className="frete" key={index}>
-            <div className="titulo_frete">
-              <img className="caminhao" src="http://localhost:3000/img/frete.svg" />
-              <h3 className="CEP">DIGITE O CEP DO ENDEREÇO DE ENTREGA</h3>
-            </div>
-            <div className="valor_frete">
-              <Input
-                type="number"
-                className="barra_cep"
-                name="CEP"
-                placeholder="ex: 00000-000"
-              />
-              <span id="valor_frete">R$ 00,00</span>
-            </div>
-          </section>
-        );
-      })}
+      {productsCart?.map((product) => (
+		<>
+			<div class="produto">
+					<img class="foto_carrinho" src={`http://localhost:3000/img/${product.image}`}/>
+					<div>
+					<p class="nome_produto"> {product.name}</p>
+					<p class="descritivo_produto">{product.description}</p>
+          <button
+          onClick={() => handleRemove(product.id)}
+          >
+            Remover
+          </button>
+				</div>
+				</div>
+				<div class="carrinho_direita">
+				<div class="container">
+					<div class="row">
+						<section id="mais_menos">
+							<div
+								class="btn-quantidade"
+								id="remover"
+								onclick="setQuantidade('remove')"
+							>
+								-
+							</div>
+							<input
+								id="input-quantidade"
+								type="text"
+								value="0"
+								min="0"
+							/>
+							<div
+								class="btn-quantidade"
+								id="adicionar"
+								onclick="setQuantidade('add')"
+							>
+								+
+							</div>
+            </section>
+					</div>
+				  </div>
+				<div class="valor_unitário">R$ 00,00</div>
+				<div class="valor_total">R$ 00,00</div>
+			</div>
+		</>
+	  ))} 
+      
 
       <section className="fim_carrinho">
         <div className="espaco_total"></div>

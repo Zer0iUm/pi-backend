@@ -4,42 +4,52 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useLocation } from 'react-router-dom';
 import api from '../../services/api';
+import { getCookie } from '../../utils';
 import './style.css';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../reducer/cartSlice';
 
 const Product = () => {
-	const location = useLocation();
 	const [product, setProduct] = useState([]);
 	const [allProducts, setAllProducts] = useState([]);
+	const [activeImage1, setActiveImage1] = useState(true);
+	const [activeImage2, setActiveImage2] = useState(false);
+	const [activeImage3, setActiveImage3] = useState(false);
+	const [quantidade, setQuantidade] = useState(1);
+	const [displayImage, setDisplayImage] = useState(
+		`http://localhost:3000/img/${product.image}`
+	);
 
-	useEffect(() => {
-		loadProduct();
-	}, []);
-
+	const [price, setPrice] = useState(product.price);
+	const dispatch = useDispatch();
+	const location = useLocation();
+	
 	const loadProduct = async () => {
 		const response = await api.get(`product/${location.state.id}`);
 		setProduct(response.data);
 		const responseAll = await api.get('product');
 		setAllProducts(responseAll.data);
 	};
-
-	const [displayImage, setDisplayImage] = useState(
-		`http://localhost:3000/img/${product.image}`
-	);
-	const [activeImage1, setActiveImage1] = useState(true);
-	const [activeImage2, setActiveImage2] = useState(false);
-	const [activeImage3, setActiveImage3] = useState(false);
-	const [quantidade, setQuantidade] = useState(1);
-	const [price, setPrice] = useState(product.price);
+	
 	const fixedPrice = product.price;
-
-	useEffect(() => {
-		setDisplayImage(`http://localhost:3000/img/${product.image}`);
-		setPrice(product.price);
-	}, [product]);
 
 	const handleChange = thumbnail => {
 		setDisplayImage(thumbnail);
 	};
+	
+	const adicionarAoCarrinho = () => {
+		dispatch(addToCart(product));
+	}
+
+	useEffect(() => {
+		loadProduct();
+	}, []);
+	
+	useEffect(() => {
+		setDisplayImage(`http://localhost:3000/img/${product.image}`);
+		setPrice(product.price);
+	}, [product]);
+	
 	return (
 		<>
 			<Header />
@@ -199,27 +209,35 @@ const Product = () => {
 						>
 							+
 						</div>
-						<button>COMPRAR</button>
+						<button
+							onClick={adicionarAoCarrinho}
+						>
+							COMPRAR
+						</button>
 					</section>
 					<>
-						<Link
-							state={{id: product.id}}
+					{getCookie('admin') === '1' ? (
+						<>
+							<Link
+							state={{ id: product.id }}
 							to={`/productupdate`}
 							className='action-button edit'
-						>
+							>
 							Editar Produto
-						</Link>
-						<form
+							</Link>
+							<form
 							action={`http://localhost:3000/img/product/${product.id}?_method=DELETE`}
 							method='POST'
-						>
+							>
 							<button
 								type='submit'
 								className='action-button delete'
 							>
 								Remover Produto
 							</button>
-						</form>
+							</form>
+						</>
+						) : null}
 					</>
 				</section>
 			</div>

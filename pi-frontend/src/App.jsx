@@ -1,14 +1,19 @@
-import React from 'react';
-import Router from './router';
-import MyContext from './contexts/myContext';
-import './global.css';
+import React from "react";
+import Router from "./router";
+import { Provider } from "react-redux";
+
+import MyContext from "./contexts/myContext";
+import "./App.css";
+import store from "./store";
 
 function App() {
-	return (
-		<div className='App'>
-			<Router />
-		</div>
-	);
+  return (
+    <Provider store={store}>
+      <div className="App">
+        <Router />
+      </div>
+    </Provider>
+  );
 }
 
 export default App;

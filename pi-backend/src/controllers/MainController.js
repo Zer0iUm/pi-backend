@@ -80,35 +80,7 @@ const MainController = {
       res.status(400).json({ error });
     }
   },
-
-  login: (req, res) => {
-    res.render("login", { req });
-    toThousand;
-  },
-  logout: (req, res) => {
-    req.session.destroy();
-    res.redirect("homeStore");
-    toThousand;
-  },
-  accountUser: (req, res) => {
-    const id = req.session.id;
-    res.render("accountUser", { req, id });
-    toThousand;
-  },
-  accountAdmin: (req, res) => {
-    res.render("accountAdmin", { req });
-    toThousand;
-  },
-
-  product: (req, res) => {
-    res.render("product", { req, products });
-    toThousand;
-  },
-
-  checkout: (req, res) => {
-    res.render("checkout", { req });
-  },
-
+  
   shoppingCart: async (req, res) => {
     try {
       const products = await Product.findAll();
@@ -120,10 +92,35 @@ const MainController = {
       res.status(400).json({ error });
     }
   },
-
-  signUp: (req, res) => {
-    res.render("signUp", { req });
+  
+/*   logout: (req, res) => {
+    req.session.destroy();
+    res.redirect("homeStore");
+    toThousand;
+  }, */
+ /*  accountUser: (req, res) => {
+    const id = req.session.id;
+    res.render("accountUser", { req, id });
+    toThousand;
+  }, */
+/*   accountAdmin: (req, res) => {
+    res.render("accountAdmin", { req });
+    toThousand;
   },
+
+  product: (req, res) => {
+    res.render("product", { req, products });
+    toThousand;
+  },
+
+  checkout: (req, res) => {
+    res.render("checkout", { req });
+  }, */
+
+
+/*   signUp: (req, res) => {
+    res.render("signUp", { req });
+  }, */
 };
 
 module.exports = MainController;

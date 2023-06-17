@@ -23,15 +23,15 @@ router.get("/listAcessories", mainController.listAcessories);
 
 router.get("/kits", mainController.kits);
 
-router.get("/login", mainController.login);
+/* router.get("/login", mainController.login); */
 
 router.post("/login", userController.userLogin);
 
-router.get("/logout", mainController.logout);
+/* router.get("/logout", mainController.logout);
 
 router.get("/accountUser", mainController.accountUser);
 
-router.get("/accountAdmin", mainController.accountAdmin);
+router.get("/accountAdmin", mainController.accountAdmin); */
 
 //router.get("/productRegistration", productController.createFormEJS);
 
@@ -43,7 +43,7 @@ router.get("/accountAdmin", mainController.accountAdmin);
 
 //router.get('/product/:id', mainController.search);
 
-router.get("/checkout", mainController.checkout);
+/* router.get("/checkout", mainController.checkout); */
 
 //router.get("/search", mainController.search); Não usa mais o search
 
@@ -51,7 +51,7 @@ router.get("/shoppingCart", authentication, mainController.shoppingCart);
 
 //user
 
-router.get("/signUp", mainController.signUp);
+/* router.get("/signUp", mainController.signUp); */
 
 router.post("/signUp", userController.register);
 

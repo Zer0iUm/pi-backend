@@ -12,16 +12,13 @@ const ShoppingCart = () => {
 	const [product, setProduct] = useState([]);
 
 	useEffect(() => {
-		loadProduct();
+		/* loadProduct(); */
 	}, []);
 
-	const loadProduct = async () => {
-		const response = await api.get('product');
-		setProduct(response.data);
-	};
 	return (
 		<>
 			<Header />
+
 			<section className='carrinho_compra'>
 				<div className='header_carrinho'>
 					<div className='titulo_carrinho'>
@@ -39,7 +36,9 @@ const ShoppingCart = () => {
 					</button>
 				</div>
 			</section>
+
 			<div id='linha-horizontal1'></div>
+
 			<section className='barra_carrinho'>
 				<div>
 					<h2 className='topo_carrinho1'>PRODUTO</h2>
@@ -58,64 +57,69 @@ const ShoppingCart = () => {
 					</h2>
 				</div>
 			</section>
-			{product.map(product => {
-				<section className='frete'>
-					<div className='titulo_frete'>
-						<img
-							className='caminhao'
-							src='http://localhost:3000/img/frete.svg'
-						/>
-						<h3 className='CEP'>
-							DIGITE O CEP DO ENDEREÇO DE ENTREGA
-						</h3>
-					</div>
-					<div className='valor_frete'>
-						<Input
-							type='number'
-							className='barra_cep'
-							name='CEP'
-							placeholder='ex: 00000-000'
-						></Input>
-						<span id='valor_frete'>R$ 00,00</span>
-					</div>
-				</section>;
+
+			{product.map((product, index) => {
+				return (
+					<section className='frete' key={index}>
+						<div className='titulo_frete'>
+							<img
+								className='caminhao'
+								src='http://localhost:3000/img/frete.svg'
+							/>
+							<h3 className='CEP'>
+								DIGITE O CEP DO ENDEREÇO DE ENTREGA
+							</h3>
+						</div>
+						<div className='valor_frete'>
+							<Input
+								type='number'
+								className='barra_cep'
+								name='CEP'
+								placeholder='ex: 00000-000'
+							/>
+							<span id='valor_frete'>R$ 00,00</span>
+						</div>
+					</section>
+				);
 			})}
-			;
+
 			<section className='fim_carrinho'>
 				<div className='espaco_total'></div>
 				<div className='soma_carrinho'>
 					<div className='subtotal'>
-						<span className='subtil'>SUBTOTAL</span>
-					</div>
-					<div>
-						<h2 className='topo_carrinho'>
-							<li>
-								<h2>QUANTIDADE</h2>
-							</li>
-							<li>
-								<h2>VALOR UNITÁRIO</h2>
-							</li>
-							<li>
-								<h2>VALOR TOTAL</h2>
-							</li>
-						</h2>
-					</div>
-				</div>
-				<span className='frete2'>
-					<span className='subtil'>FRETE</span>
-					<span id='frete_valor2'>R$ 00,00</span>
-				</span>
-				<div id='linha-horizontal2'></div>
-				<div className='total_compra'>
-					<span>TOTAL</span>
-					<span>R$ 00,00</span>
-				</div>
-				<div className='alinhamento_botao'>
-					<div></div>
-					<div>
-						<button className='botao_amarelo' type='button'>
-							FINALIZAR COMPRA
-						</button>
+						<div>
+							<span className='subtil'>SUBTOTAL</span>
+						</div>
+						<div>
+							<h2 className='topo_carrinho'>
+								<li>
+									<h2>QUANTIDADE</h2>
+								</li>
+								<li>
+									<h2>VALOR UNITÁRIO</h2>
+								</li>
+								<li>
+									<h2>VALOR TOTAL</h2>
+								</li>
+							</h2>
+						</div>
+						<span className='frete2'>
+							<span className='subtil'>FRETE</span>
+							<span id='frete_valor2'>R$ 00,00</span>
+						</span>
+						<div id='linha-horizontal2'></div>
+						<div className='total_compra'>
+							<span>TOTAL</span>
+							<span>R$ 00,00</span>
+						</div>
+						<div className='alinhamento_botao'>
+							<div></div>
+							<div>
+								<button className='botao_amarelo' type='button'>
+									FINALIZAR COMPRA
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

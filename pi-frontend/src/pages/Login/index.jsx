@@ -17,7 +17,7 @@ const Login = () => {
 	const handleLogin = async () => {
 		const auth = {
 			email: email,
-			pwd: pwd,
+			password: pwd,
 		};
 
 		try {
@@ -29,10 +29,16 @@ const Login = () => {
 				1
 			)}`;
 
+			document.cookie = `admin=${response.data.admin}; expires=${new Date(
+				2100,
+				0,
+				1
+			)}`;
+
 			alert('Login realizado!');
-			navigate('/');
+			navigate('/homestore');
 		} catch (error) {
-			alert(error.response.data);
+			alert(error.response.data.error);
 		}
 	};
 	return (
@@ -48,19 +54,14 @@ const Login = () => {
 					<h3 className={styles.form__subtitulo}>
 						Conecte-se para finalizar a compra
 					</h3>
-					{/* <input
-						placeholder='E-mail'
-						name='email'
-						autocomplete='username'
-						id='email'
-					/> */}
 					<Input
 						placeholder='E-mail'
 						name='email'
 						autocomplete='username'
 						id='email'
+						onChange={e => setEmail(e.target.value)}
 						value={email}
-					></Input>
+					/>
 
 					<input
 						type='password'
@@ -68,12 +69,18 @@ const Login = () => {
 						placeholder='Senha'
 						autocomplete='current-password'
 						id='senha'
+						onChange={e => setPwd(e.target.value)}
+						value={pwd}
 					/>
 					<a href='#' className={styles.esqueci__senha}>
 						Esqueci a minha senha
 					</a>
 					<span className={styles.form__erro}></span>
-					<button type='submit' className={styles.form__button}>
+					<button
+						type='submit'
+						className={styles.form__button}
+						onClick={handleLogin}
+					>
 						ENTRAR
 					</button>
 					<p>

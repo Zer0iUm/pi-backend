@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import paleAle from '../../../images/american pale ale.png';
 import doubleIpa from '../../../images/double.png';
 import brownIpa from '../../../images/brown.png';
-import '../style.css';
+import styles from '../marca.module.css';
 
 export default function About() {
 	const [show, setShow] = useState(1);
@@ -43,13 +43,13 @@ export default function About() {
 	];
 
 	return (
-		<section id='info--menu'>
-			<div className='btn--menu'>
+		<section id='info_menu'>
+			<div className={styles.btn_menu}>
 				{beers.map(beer => {
 					return (
 						<button
-							className='btn--info'
-							id='title--info1'
+							className={styles.btn_info}
+							id='title_info1'
 							onClick={e => setShow(beer.id)}
 							style={{
 								color: beer.color,
@@ -64,7 +64,7 @@ export default function About() {
 
 			<div
 				id='show--info1'
-				className='show--info'
+				className={styles.show_info}
 				style={{
 					backgroundColor: beers[show].bgColor,
 					color: beers[show].color,
@@ -74,7 +74,7 @@ export default function About() {
 				<img
 					alt='info 1'
 					src={beers[show].image}
-					className='img--info'
+					className={styles.img_info}
 				/>
 			</div>
 		</section>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import api from '../../services/api';
-import DemoCarousel from './components/carousel';
+import Slide from '../../components/Slide/Slide';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -20,8 +20,20 @@ const Home = () => {
 	return (
 		<>
 			<Header />
-			<DemoCarousel />
-			{/* 	<Slide banner={banner} type='Acessórios' title='Goro Style' /> */}
+			<Slide
+				banner={`http://localhost:3000/img/banner goró 1.png`}
+				banner1={`http://localhost:3000/img/banner goró 1.png`}
+				banner2={`http://localhost:3000/img/banner goró 1.png`}
+				miniTitle='ACESSÓRIOS'
+				miniTitle1='ACESSÓRIOS'
+				miniTitle2='ACESSÓRIOS'
+				title='GORÓ STYLE'
+				title1='GORÓ STYLE'
+				title2='GORÓ STYLE'
+				text='Chique e confortável! Garanta a camiseta que combina com a sua cerveja favorita.'
+				text1='Chique e confortável! Garanta a camiseta que combina com a sua cerveja favorita.'
+				text2='Chique e confortável! Garanta a camiseta que combina com a sua cerveja favorita.'
+			/>
 			<section className={styles.categoria}>
 				<h3>CATEGORIAS</h3>
 				<div className={styles.categoria__container}>

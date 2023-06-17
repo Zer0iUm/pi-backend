@@ -1,7 +1,8 @@
 import React from 'react';
-import '../style.css';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.png';
+
+import styles from '../marca.module.css';
 
 export default function Navbar() {
 	const navLinks = [
@@ -11,7 +12,7 @@ export default function Navbar() {
 		},
 		{
 			name: 'PORTFÓLIO',
-			link: '#info--menu',
+			link: '#info_menu',
 		},
 		{
 			image: { logo },
@@ -44,7 +45,7 @@ export default function Navbar() {
 		<>
 			<header>
 				<nav>
-					<ul className='nav-principal'>
+					<ul className={styles.nav_principal}>
 						{navLinks.map(item => {
 							if (item.image) {
 								return (
@@ -52,7 +53,7 @@ export default function Navbar() {
 										<img
 											alt={item.alt}
 											src={logo}
-											className='logo'
+											className={styles.logo}
 										/>
 									</li>
 								);
@@ -60,7 +61,7 @@ export default function Navbar() {
 								return (
 									<li>
 										<Link
-											className='nav--link'
+											className={styles.nav_link}
 											to={item.link}
 										>
 											{item.name}
@@ -70,11 +71,14 @@ export default function Navbar() {
 							}
 						})}
 					</ul>
-					<ul className='nav-icones'>
+					<ul className={styles.nav_icones}>
 						{navSocials.map(item => {
 							return (
 								<li>
-									<Link className='nav--link' to={item.link}>
+									<Link
+										className={styles.nav_link}
+										to={item.link}
+									>
 										<i className={item.name}></i>
 									</Link>
 								</li>

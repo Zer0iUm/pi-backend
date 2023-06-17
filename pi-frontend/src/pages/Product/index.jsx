@@ -4,7 +4,8 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useLocation } from 'react-router-dom';
 import api from '../../services/api';
-import './style.css';
+import styles from './Product.module.css';
+import Comments from './components/Comments';
 
 const Product = () => {
 	const location = useLocation();
@@ -43,9 +44,9 @@ const Product = () => {
 	return (
 		<>
 			<Header />
-			<div id='produto'>
-				<section id='img-produto'>
-					<div id='produto-mini'>
+			<div id={styles.produto}>
+				<section id={styles.img_produto}>
+					<div id={styles.produto_mini}>
 						<img
 							alt='Pequeno 1'
 							src={`http://localhost:3000/img/${product.image}`}
@@ -64,7 +65,6 @@ const Product = () => {
 									setActiveImage3(false);
 								}
 							}}
-							id='img-mini-1'
 						/>
 						<img
 							alt='Pequeno 2'
@@ -84,7 +84,6 @@ const Product = () => {
 									setActiveImage3(false);
 								}
 							}}
-							id='img-mini-2'
 						/>
 						<img
 							alt='Pequeno 3'
@@ -104,7 +103,6 @@ const Product = () => {
 									setActiveImage3(true);
 								}
 							}}
-							id='img-mini-3'
 						/>
 					</div>
 					<img
@@ -113,12 +111,12 @@ const Product = () => {
 						id='display'
 					/>
 				</section>
-				<section id='info-produto'>
+				<section id={styles.info_produto}>
 					<h1>{product.name}</h1>
 					<h2>{product.type}</h2>
 					<p>{product.description}</p>
 					{product.type === '1' ? (
-						<table id='info-tabela'>
+						<table id={styles.info_tabela}>
 							<tr>
 								<th>% de álcool</th>
 								<th>IBU</th>
@@ -132,38 +130,37 @@ const Product = () => {
 						</table>
 					) : null}
 					<hr />
-					<div id='rating'>
+					<div id={styles.rating}>
 						<img
 							src='http://localhost:3000/img/star-active.png'
 							alt='star 1'
-							id='rating-1'
+							id={styles.rating_1}
 						/>
 						<img
 							src='http://localhost:3000/img/star.png'
 							alt='star 2'
-							id='rating-2'
+							id={styles.rating_2}
 						/>
 						<img
 							src='http://localhost:3000/img/star.png'
 							alt='star 3'
-							id='rating-3'
+							id={styles.rating_3}
 						/>
 						<img
 							src='http://localhost:3000/img/star.png'
 							alt='star 4'
-							id='rating-4'
+							id={styles.rating_4}
 						/>
 						<img
 							src='http://localhost:3000/img/star.png'
 							alt='star 5'
-							id='rating-5'
+							id={styles.rating_5}
 						/>
 					</div>
-					<h3 id='valorTotal'>R${Number(price).toFixed(2)}</h3>
-					<section id='compra'>
+					<h3 id={styles.valorTotal}>R${Number(price).toFixed(2)}</h3>
+					<section id={styles.compra}>
 						<div
-							className='btn-quantidade'
-							id='remover'
+							className={styles.btn_quantidade}
 							onClick={() => {
 								setQuantidade(prevQuantidade => {
 									if (quantidade <= 1) setQuantidade(1);
@@ -181,13 +178,12 @@ const Product = () => {
 							-
 						</div>
 						<input
-							id='input-quantidade'
+							id={styles.input_quantidade}
 							type='text'
 							value={quantidade}
 						/>
 						<div
-							className='btn-quantidade'
-							id='adicionar'
+							className={styles.btn_quantidade}
 							onClick={() => {
 								setQuantidade(prevQuantidade => {
 									const updatedQuantidade =
@@ -204,7 +200,7 @@ const Product = () => {
 					<>
 						<Link
 							to={`http://localhost:3000/img/product/update/${product.id}`}
-							className='action-button edit'
+							// className='action_button edit'
 						>
 							Editar Produto
 						</Link>
@@ -214,7 +210,7 @@ const Product = () => {
 						>
 							<button
 								type='submit'
-								className='action-button delete'
+								// className='action_button delete'
 							>
 								Remover Produto
 							</button>
@@ -223,89 +219,19 @@ const Product = () => {
 				</section>
 			</div>
 
-			<section id='comentarios'>
-				<h2 className='subtitulo'>COMENTÁRIOS</h2>
-				<hr className='divisao' />
-				<section className='comentario'>
-					<h3>Nome Sobrenome</h3>
-					<div className='rating-user'>
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-					</div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Donec laoreet fermentum mollis. In nisi tellus,
-						tristique eget nisl at, tristique posuere turpis.
-						Quisque eleifend velit quis vestibulum sodales. Donec
-						porta metus non malesuada aliquet.
-					</p>
-					<div className='rating-comentario'>
-						<img
-							alt='thumbs up'
-							src='http://localhost:3000/img/like-active.png'
-						/>
-						<div className='likes'>1</div>
-						<img
-							alt='thumbs down'
-							src='http://localhost:3000/img/dislike.png'
-						/>
-						<div className='dislikes'></div>
-					</div>
-					<h3>Nome Sobrenome</h3>
-					<div className='rating-user'>
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-					</div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</p>
-					<div className='rating-comentario'>
-						<img
-							alt='thumbs up'
-							src='http://localhost:3000/img/like.png'
-						/>
-						<div className='likes'></div>
-						<img
-							alt='thumbs down'
-							src='http://localhost:3000/img/dislike-active.png'
-						/>
-						<div className='dislikes'>1</div>
-					</div>
-					<h3>Nome Sobrenome</h3>
-					<div className='rating-user'>
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-						<img src='http://localhost:3000/img/star.png' />
-					</div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</p>
-					<div className='rating-comentario'>
-						<img
-							alt='thumbs up'
-							src='http://localhost:3000/img/like.png'
-						/>
-						<div className='likes'></div>
-						<img
-							alt='thumbs down'
-							src='http://localhost:3000/img/dislike.png'
-						/>
-						<div className='dislikes'></div>
-					</div>
-				</section>
+			<section id={styles.comentarios}>
+				<h2 className={styles.subtitulo}>COMENTÁRIOS</h2>
+				<hr className={styles.divisao} />
+				<Comments />
+				<Comments />
+				<Comments />
 			</section>
 
-			<section id='recomendacao'>
-				<h2 className='subtitulo'>QUEM VIU ESSE PRODUTO TAMBÉM VIU</h2>
-				<hr className='divisao' />
+			<section id={styles.recomendacao}>
+				<h2 className={styles.subtitulo}>
+					QUEM VIU ESSE PRODUTO TAMBÉM VIU
+				</h2>
+				<hr className={styles.divisao} />
 				<ul className='produtos__container'>
 					{Array.from({ length: 4 }, (item, index) => {
 						const iRandom = Math.floor(
@@ -337,9 +263,9 @@ const Product = () => {
 										<p className='produto__nome'>
 											{product.name}
 										</p>
-										<p className='produto__descricao'>
+										{/* <p className='produto__descricao'>
 											{product.description}
-										</p>
+										</p> */}
 										<p className='produto__valor'>
 											{product.price}
 										</p>
@@ -350,6 +276,7 @@ const Product = () => {
 					})}
 				</ul>
 			</section>
+			<Footer />
 		</>
 	);
 };

@@ -1,71 +1,37 @@
-import './style.css';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import styles from './Slide.module.css';
 
-export default function Slide(props) {
+const Slide = props => {
 	return (
-		<section className='carrossel'>
-			<div className='swiper'>
-				<div className='swiper-wrapper'>
-					<div className='swiper-slide'>
-						<div>
-							<img src={props.banner} alt='banner' />
-						</div>
-						<div className='conteudo'>
-							<p className='conteudo-um'>{props.type}</p>
-							<h2>{props.title}</h2>
-							<p className='conteudo-dois'>
-								Lorem ipsum dolor sit amet, consectetur
-								<br />
-								adipiscing elit.sed ipsum tempor, fermentum
-								<br />
-								lorem pellentesque,luctus tortor.
-							</p>
-							<Link to='#'>VER CATEGORIA</Link>
-						</div>
-					</div>
-					{/* <div className='swiper-slide'>
-						<div>
-							<img src={props.banner2} alt='banner' />
-						</div>
-						<div className='conteudo'>
-							<p className='conteudo-um'>CATEGORIA</p>
-							<h2>LOREM IPSUM</h2>
-							<p className='conteudo-dois'>
-								Lorem ipsum dolor sit amet, consectetur
-								<br />
-								adipiscing elit.sed ipsum tempor, fermentum
-								<br />
-								lorem pellentesque,luctus tortor.
-							</p>
-							<Link to='#'>VER CATEGORIA</Link>
-						</div>
-					</div>
-					<div className='swiper-slide'>
-						<div>
-							<img src={props.banner3} alt='banner' />
-						</div>
-						<div className='conteudo'>
-							<p className='conteudo-um'>CATEGORIA</p>
-							<h2>LOREM IPSUM</h2>
-							<p className='conteudo-dois'>
-								Lorem ipsum dolor sit amet, consectetur
-								<br />
-								adipiscing elit.sed ipsum tempor, fermentum
-								<br />
-								lorem pellentesque,luctus tortor.
-							</p>
-							<Link to='../lists/listAcessories/index.html'>
-								VER CATEGORIA
-							</Link>
-						</div>
-					</div> */}
-				</div>
-				<div className='swiper-pagination'></div>
-
-				<div className='swiper-button-prev'></div>
-				<div className='swiper-button-next'></div>
+		<Carousel
+			showThumbs={false}
+			dynamicHeight={false}
+			autoPlay={true}
+			showStatus={false}
+		>
+			<div className={styles.container}>
+				<img src={props.banner} style={{ height: '540px' }} />
+				<h3 className={styles.mini_title}>{props.miniTitle}</h3>
+				<h1 className={styles.title}>{props.title}</h1>
+				<p className={styles.text}>{props.text}</p>
 			</div>
-		</section>
+			<div className={styles.container}>
+				<img src={props.banner1} style={{ height: '540px' }} />
+				<h3 className={styles.mini_title}>{props.miniTitle1}</h3>
+				<h1 className={styles.title}>{props.title1}</h1>
+				<p className={styles.text}>{props.text1}</p>
+			</div>
+			<div className={styles.container}>
+				<img src={props.banner2} style={{ height: '540px' }} />
+				<h3 className={styles.mini_title}>{props.miniTitle2}</h3>
+				<h1 className={styles.title}>{props.title2}</h1>
+				<p className={styles.text}>{props.text2}</p>
+			</div>
+		</Carousel>
 	);
-}
+};
+
+export default Slide;

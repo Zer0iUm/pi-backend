@@ -24,6 +24,7 @@ const Home = () => {
 				banner={`http://localhost:3000/img/banner goró 1.png`}
 				banner1={`http://localhost:3000/img/banner goró 1.png`}
 				banner2={`http://localhost:3000/img/banner goró 1.png`}
+				height='540px'
 				miniTitle='ACESSÓRIOS'
 				miniTitle1='ACESSÓRIOS'
 				miniTitle2='ACESSÓRIOS'

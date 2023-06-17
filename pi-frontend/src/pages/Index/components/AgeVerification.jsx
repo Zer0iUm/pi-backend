@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import colseBtn from '../../../images/closePopUp.png';
+// import closeBtn from '../../../images/closePopUp.png';
 
 import styles from '../marca.module.css';
 
@@ -77,7 +77,7 @@ export default function AgeVerification() {
 			{legalAge ? null : (
 				<div id={styles.container_pop_up}>
 					<section className={styles.pop_up}>
-						<img src={colseBtn} onclick='closePopUp()' />
+						{/* <img src={closeBtn} onclick='closePopUp()' /> */}
 						<h1 className={styles.title_pop_up}>
 							VOCÊ TEM IDADE PARA TOMAR GORÓ?
 						</h1>

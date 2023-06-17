@@ -12,7 +12,7 @@
 	justify-content: space-between;
 }
 
-.btn-quantidade {
+.btn_quantidade {
 	background-color: black;
 	color: white;
 	width: 2.3rem;
@@ -21,13 +21,13 @@
 	padding-top: 0.2rem;
 }
 
-.btn-quantidade:hover {
+.btn_quantidade:hover {
 	background-color: rgb(60, 60, 60);
 	cursor: pointer;
 	user-select: none;
 }
 
-#input-quantidade {
+#input_quantidade {
 	width: 3rem;
 	font-size: 20px;
 	text-align: center;
@@ -74,7 +74,7 @@
 	user-select: none;
 }
 
-#linha-horizontal1 {
+#linha_horizontal1 {
 	width: 80%;
 	border: 2px solid #000;
 	margin: -1% 10% 0% 10%;
@@ -297,7 +297,7 @@ input:focus {
 	justify-content: space-between;
 }
 
-#linha-horizontal2 {
+#linha_horizontal2 {
 	border-top: 3px solid #000000;
 }
 

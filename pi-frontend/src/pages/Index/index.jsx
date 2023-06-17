@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Slide from '../../components/Slide/Slide';
-import banner from '../../images/banner topo 1.png';
 
 const Index = () => {
 	return (
@@ -16,6 +15,7 @@ const Index = () => {
 				banner={`http://localhost:3000/img/banner topo 1.png`}
 				banner1={`http://localhost:3000/img/banner topo-casquinho 2.png`}
 				banner2={`http://localhost:3000/img/banner topo-copo 1.png`}
+				height='868px'
 				miniTitle='VOCÊ QUER UMA LATINHA?'
 				miniTitle1='BATE E VOLTA'
 				miniTitle2='TIM-TIM, TIM-TIM!'

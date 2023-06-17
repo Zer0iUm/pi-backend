@@ -75,14 +75,14 @@ const ShoppingCart = () => {
 
 			{productsCart?.map(product => (
 				<>
-					<div class='produto'>
+					<div className='produto'>
 						<img
-							class='foto_carrinho'
+							className='foto_carrinho'
 							src={`http://localhost:3000/img/${product.image}`}
 						/>
 						<div>
-							<p class='nome_produto'> {product.name}</p>
-							<p class='descritivo_produto'>
+							<p className='nome_produto'> {product.name}</p>
+							<p className='descritivo_produto'>
 								{product.description}
 							</p>
 							<button onClick={() => handleRemove(product.id)}>
@@ -90,12 +90,12 @@ const ShoppingCart = () => {
 							</button>
 						</div>
 					</div>
-					<div class='carrinho_direita'>
-						<div class='container'>
-							<div class='row'>
+					<div className='carrinho_direita'>
+						<div className='container'>
+							<div className='row'>
 								<section id='mais_menos'>
 									<div
-										class='btn-quantidade'
+										className='btn-quantidade'
 										id='remover'
 										onclick="setQuantidade('remove')"
 									>
@@ -108,7 +108,7 @@ const ShoppingCart = () => {
 										min='0'
 									/>
 									<div
-										class='btn-quantidade'
+										className='btn-quantidade'
 										id='adicionar'
 										onclick="setQuantidade('add')"
 									>
@@ -117,8 +117,8 @@ const ShoppingCart = () => {
 								</section>
 							</div>
 						</div>
-						<div class='valor_unitário'>R$ 00,00</div>
-						<div class='valor_total'>R$ 00,00</div>
+						<div className='valor_unitário'>R$ 00,00</div>
+						<div className='valor_total'>R$ 00,00</div>
 					</div>
 				</>
 			))}

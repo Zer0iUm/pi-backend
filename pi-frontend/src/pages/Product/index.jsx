@@ -203,7 +203,8 @@ const Product = () => {
 					</section>
 					<>
 						<Link
-							to={`http://localhost:3000/img/product/update/${product.id}`}
+							state={{id: product.id}}
+							to={`/productupdate`}
 							className='action-button edit'
 						>
 							Editar Produto

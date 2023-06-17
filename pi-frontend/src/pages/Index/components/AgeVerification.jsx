@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import colseBtn from '../../../images/closePopUp.png';
 
-import '../style.css';
+import styles from '../marca.module.css';
 
 export default function AgeVerification() {
 	const [month, setMonth] = useState(1);
@@ -75,18 +75,18 @@ export default function AgeVerification() {
 	return (
 		<>
 			{legalAge ? null : (
-				<div id='container-pop-up'>
-					<section className='pop-up'>
+				<div id={styles.container_pop_up}>
+					<section className={styles.pop_up}>
 						<img src={colseBtn} onclick='closePopUp()' />
-						<h1 className='title-pop-up'>
+						<h1 className={styles.title_pop_up}>
 							VOCÊ TEM IDADE PARA TOMAR GORÓ?
 						</h1>
-						<h4 className='text'>CONFIRME A SUA IDADE</h4>
-						<div className='container-date'>
+						<h4 className={styles.text}>CONFIRME A SUA IDADE</h4>
+						<div className={styles.container_date}>
 							<span>
 								<select
 									name='day'
-									className='day select'
+									className={`${styles.day} ${styles.select}`}
 									onChange={e => setDay(e.target.value)}
 								>
 									<option>Idade</option>
@@ -102,7 +102,7 @@ export default function AgeVerification() {
 							<span>
 								<select
 									name='month'
-									className='select month'
+									className={`${styles.select} ${styles.month}`}
 									onChange={e => setMonth(e.target.value)}
 								>
 									{months.map(month => {
@@ -121,7 +121,7 @@ export default function AgeVerification() {
 								<select
 									name='year'
 									id='year'
-									className='select year'
+									className={`${styles.select} ${styles.year}`}
 									onChange={e => setYear(e.target.value)}
 								>
 									{years.map(year => {
@@ -135,13 +135,13 @@ export default function AgeVerification() {
 							</span>
 						</div>
 					</section>
-					<div className='divider'>
-						<hr className='amarelo' />
-						<hr className='vermelho' />
-						<hr className='preto' />
+					<div className={styles.divider}>
+						<hr className={styles.amarelo} />
+						<hr className={styles.vermelho} />
+						<hr className={styles.preto} />
 					</div>
 
-					<button id='btn-popup' onClick={handleAge}>
+					<button id={styles.btn_popup} onClick={handleAge}>
 						VERIFICAR IDADE
 					</button>
 				</div>

@@ -10,153 +10,162 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart } from '../../reducer/cartSlice';
 
 const ShoppingCart = () => {
-  const location = useLocation();
-  const [product, setProduct] = useState([]);
-  const [productsCart, setProductsCart] = useState();
+	const location = useLocation();
+	const [product, setProduct] = useState([]);
+	const [productsCart, setProductsCart] = useState();
 
-  let carrinho = useSelector(state => state.cart)
+	let carrinho = useSelector(state => state.cart);
 
-  const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
-  const handleRemove = (id) => {
-    dispatch(removeFromCart(id))
-  }
+	const handleRemove = id => {
+		dispatch(removeFromCart(id));
+	};
 
-  useEffect(() => {
-		setProductsCart(carrinho)
-  }, [carrinho]);
+	useEffect(() => {
+		setProductsCart(carrinho);
+	}, [carrinho]);
 
-  useEffect(() => {
-	console.log("Produtos", productsCart)
-  }, [productsCart]);
+	useEffect(() => {
+		console.log('Produtos', productsCart);
+	}, [productsCart]);
 
-  return (
-    <>
-      <Header />
-
-      <section className="carrinho_compra">
-        <div className="header_carrinho">
-          <div className="titulo_carrinho">
-            <img className="carrinho2" alt="carrinho" src="http://localhost:3000/img/carrinho.svg" />
-            <h1 className="titulos"> CARRINHO DE COMPRAS</h1>
-          </div>
-          <button className="botao_preto" type="button">
-            <Link className="comprando" to="/homeStore">CONTINUAR COMPRANDO</Link>
-          </button>
-        </div>
-      </section>
-
-      <div id="linha-horizontal1"></div>
-
-      <section className="barra_carrinho">
-        <div>
-          <h2 className="topo_carrinho1">PRODUTO</h2>
-        </div>
-        <div>
-          <h2 className="topo_carrinho">
-            <li>
-              <h2>QUANTIDADE</h2>
-            </li>
-            <li>
-              <h2>VALOR UNITÁRIO</h2>
-            </li>
-            <li>
-              <h2>VALOR TOTAL</h2>
-            </li>
-          </h2>
-        </div>
-      </section>
-
-      {productsCart?.map((product) => (
+	return (
 		<>
-			<div class="produto">
-					<img class="foto_carrinho" src={`http://localhost:3000/img/${product.image}`}/>
-					<div>
-					<p class="nome_produto"> {product.name}</p>
-					<p class="descritivo_produto">{product.description}</p>
-          <button
-          onClick={() => handleRemove(product.id)}
-          >
-            Remover
-          </button>
-				</div>
-				</div>
-				<div class="carrinho_direita">
-				<div class="container">
-					<div class="row">
-						<section id="mais_menos">
-							<div
-								class="btn-quantidade"
-								id="remover"
-								onclick="setQuantidade('remove')"
-							>
-								-
-							</div>
-							<input
-								id="input-quantidade"
-								type="text"
-								value="0"
-								min="0"
-							/>
-							<div
-								class="btn-quantidade"
-								id="adicionar"
-								onclick="setQuantidade('add')"
-							>
-								+
-							</div>
-            </section>
-					</div>
-				  </div>
-				<div class="valor_unitário">R$ 00,00</div>
-				<div class="valor_total">R$ 00,00</div>
-			</div>
-		</>
-	  ))} 
-      
+			<Header />
 
-      <section className="fim_carrinho">
-        <div className="espaco_total"></div>
-        <div className="soma_carrinho">
-          <div className="subtotal">
-            <div>
-              <span className="subtil">SUBTOTAL</span>
-            </div>
-            <div>
-              <h2 className="topo_carrinho">
-                <li>
-                  <h2>QUANTIDADE</h2>
-                </li>
-                <li>
-                  <h2>VALOR UNITÁRIO</h2>
-                </li>
-                <li>
-                  <h2>VALOR TOTAL</h2>
-                </li>
-              </h2>
-            </div>
-            <span className="frete2">
-              <span className="subtil">FRETE</span>
-              <span id="frete_valor2">R$ 00,00</span>
-            </span>
-            <div id='linha-horizontal2'></div>
-            <div className="total_compra">
-              <span>TOTAL</span>
-              <span>R$ 00,00</span>
-            </div>
-            <div className="alinhamento_botao">
-              <div></div>
-              <div>
-                <button className="botao_amarelo" type="button">FINALIZAR COMPRA</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <Footer />
-    </>
-  );
+			<section className='carrinho_compra'>
+				<div className='header_carrinho'>
+					<div className='titulo_carrinho'>
+						<img
+							className='carrinho2'
+							alt='carrinho'
+							src='http://localhost:3000/img/carrinho.svg'
+						/>
+						<h1 className='titulos'> CARRINHO DE COMPRAS</h1>
+					</div>
+					<button className='botao_preto' type='button'>
+						<Link className='comprando' to='/homeStore'>
+							CONTINUAR COMPRANDO
+						</Link>
+					</button>
+				</div>
+			</section>
+
+			<div id='linha-horizontal1'></div>
+
+			<section className='barra_carrinho'>
+				<div>
+					<h2 className='topo_carrinho1'>PRODUTO</h2>
+				</div>
+				<div>
+					<h2 className='topo_carrinho'>
+						<li>
+							<h2>QUANTIDADE</h2>
+						</li>
+						<li>
+							<h2>VALOR UNITÁRIO</h2>
+						</li>
+						<li>
+							<h2>VALOR TOTAL</h2>
+						</li>
+					</h2>
+				</div>
+			</section>
+
+			{productsCart?.map(product => (
+				<>
+					<div class='produto'>
+						<img
+							class='foto_carrinho'
+							src={`http://localhost:3000/img/${product.image}`}
+						/>
+						<div>
+							<p class='nome_produto'> {product.name}</p>
+							<p class='descritivo_produto'>
+								{product.description}
+							</p>
+							<button onClick={() => handleRemove(product.id)}>
+								Remover
+							</button>
+						</div>
+					</div>
+					<div class='carrinho_direita'>
+						<div class='container'>
+							<div class='row'>
+								<section id='mais_menos'>
+									<div
+										class='btn-quantidade'
+										id='remover'
+										onclick="setQuantidade('remove')"
+									>
+										-
+									</div>
+									<input
+										id='input-quantidade'
+										type='text'
+										value='0'
+										min='0'
+									/>
+									<div
+										class='btn-quantidade'
+										id='adicionar'
+										onclick="setQuantidade('add')"
+									>
+										+
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class='valor_unitário'>R$ 00,00</div>
+						<div class='valor_total'>R$ 00,00</div>
+					</div>
+				</>
+			))}
+
+			<section className='fim_carrinho'>
+				<div className='espaco_total'></div>
+				<div className='soma_carrinho'>
+					<div className='subtotal'>
+						<div>
+							<span className='subtil'>SUBTOTAL</span>
+						</div>
+						<div>
+							<h2 className='topo_carrinho'>
+								<li>
+									<h2>QUANTIDADE</h2>
+								</li>
+								<li>
+									<h2>VALOR UNITÁRIO</h2>
+								</li>
+								<li>
+									<h2>VALOR TOTAL</h2>
+								</li>
+							</h2>
+						</div>
+						<span className='frete2'>
+							<span className='subtil'>FRETE</span>
+							<span id='frete_valor2'>R$ 00,00</span>
+						</span>
+						<div id='linha-horizontal2'></div>
+						<div className='total_compra'>
+							<span>TOTAL</span>
+							<span>R$ 00,00</span>
+						</div>
+						<div className='alinhamento_botao'>
+							<div></div>
+							<div>
+								<button className='botao_amarelo' type='button'>
+									FINALIZAR COMPRA
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<Footer />
+		</>
+	);
 };
 
 export default ShoppingCart;
-

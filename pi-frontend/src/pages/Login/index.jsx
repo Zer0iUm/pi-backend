@@ -6,7 +6,7 @@ import Input from '../../components/Input';
 import { useState } from 'react';
 import api from '../../services/api';
 
-import './style.css';
+import styles from './Login.module.css';
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -44,12 +44,14 @@ const Login = () => {
 	return (
 		<>
 			<Header />
-			<section className='form'>
-				<div
-				 className='form__login' 
-				 >
-					<h2 className='form__titulo'>Faça o seu login</h2>
-					<h3 className='form__subtitulo'>
+			<section className={styles.form}>
+				<form
+					className={styles.form__login}
+					method='post'
+					action='/login'
+				>
+					<h2 className={styles.form__titulo}>Faça o seu login</h2>
+					<h3 className={styles.form__subtitulo}>
 						Conecte-se para finalizar a compra
 					</h3>
 					<Input
@@ -70,24 +72,24 @@ const Login = () => {
 						onChange={e => setPwd(e.target.value)}
 						value={pwd}
 					/>
-					<a href='#' className='esqueci__senha'>
+					<a href='#' className={styles.esqueci__senha}>
 						Esqueci a minha senha
 					</a>
-					<span className='form__erro'></span>
-					<button 
-					type='submit' 
-					className='form__button'
-					onClick={handleLogin}
+					<span className={styles.form__erro}></span>
+					<button
+						type='submit'
+						className={styles.form__button}
+						onClick={handleLogin}
 					>
 						ENTRAR
 					</button>
 					<p>
 						Primeira vez por aqui?
-						<a href='/signUp' className=''>
+						<Link to='/signUp' className=''>
 							Crie uma conta
-						</a>
+						</Link>
 					</p>
-				</div>
+				</form>
 			</section>
 			<Footer />
 		</>

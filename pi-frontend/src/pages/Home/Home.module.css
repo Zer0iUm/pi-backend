@@ -197,7 +197,7 @@
 	font-weight: 900;
 }
 
-li {
+.produto__container li {
 	list-style: none;
 }
 
@@ -260,11 +260,6 @@ li {
 
 .produtos__botao:hover {
 	background-color: #606060;
-}
-
-hr {
-	padding: 0;
-	margin: 0;
 }
 
 .amarelo {

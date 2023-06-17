@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import './style.css';
+import styles from './AccountUser.module.css';
 
 const AccountUser = () => {
 	return (
 		<>
 			<Header />
-			<div className='mainContainer'>
+			<div className={styles.mainContainer}>
 				{/* <h1>Olá, {req.session.username}</h1> */}
 
-				<Link className='btn-user' id='btn-editUser' to='#'>
+				<Link className={styles.btn_user} id='btn-editUser' to='#'>
 					<button>Alterar dados</button>
 				</Link>
 				<form
@@ -39,7 +39,7 @@ const AccountUser = () => {
 
 					<input type='submit' value='Save Changes' />
 				</form>
-				<Link className='btn-user' to='/logout'>
+				<Link className={styles.btn_user} to='/logout'>
 					<button>Sair</button>
 				</Link>
 			</div>

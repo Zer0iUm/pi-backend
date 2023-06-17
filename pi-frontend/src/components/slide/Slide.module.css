@@ -1,0 +1,21 @@
+.container {
+	position: relative;
+}
+
+.mini_title {
+	position: absolute;
+	top: 35%;
+	left: 55%;
+}
+
+.title {
+	position: absolute;
+	top: 40%;
+	left: 55%;
+}
+
+.text {
+	position: absolute;
+	top: 50%;
+	left: 55%;
+}

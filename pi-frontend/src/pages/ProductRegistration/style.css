@@ -1,10 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-  }
-  
+/*  
   h1 {
     text-align: center;
     margin-top: 30px;
@@ -32,18 +26,17 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
     box-sizing: border-box;
-  }
-  
-  button[type="submit"] {
-    background-color: #BD2D16;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #F8A912;
-  }
-  
+  } */
+
+button[type='submit'] {
+	background-color: #bd2d16;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button[type='submit']:hover {
+	background-color: #f8a912;
+}

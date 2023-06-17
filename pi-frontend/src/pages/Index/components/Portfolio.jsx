@@ -2,15 +2,15 @@ import React from 'react';
 import image1 from '../../../images/image 6.png';
 import image2 from '../../../images/image 1.png';
 
-import '../style.css';
+import styles from '../marca.module.css';
 
 export default function Portfolio() {
 	return (
-		<section id='about'>
+		<section id={styles.about}>
 			<h2>SOBRE NÓS</h2>
 			<hr />
-			<div id='container'>
-				<div className='coluna'>
+			<div id={styles.container}>
+				<div className={styles.coluna}>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 						Nunc posuere nisl sit amet erat sodales, ut dictum purus
@@ -30,14 +30,14 @@ export default function Portfolio() {
 					</p>
 					<img alt='brindando' src={image1} />
 				</div>
-				<div className='coluna'>
+				<div className={styles.coluna}>
 					<img alt='dois caras contemplando cerveja' src={image2} />
 					<p>
 						Sed consequat odio at eros viverra, at ultricies turpis
 						ullamcorper. Class aptent taciti sociosqu ad litora
 						torquent per conubia nostra, per inceptos himenaeos.
 					</p>
-					<button className='btn-geral'>
+					<button className='btn_geral'>
 						ENTRAR EM CONTATO COM A GORÓ
 					</button>
 				</div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Comments from "./components/Comments";
@@ -25,6 +25,7 @@ const Product = () => {
   const [price, setPrice] = useState(product.price);
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const loadProduct = async () => {
     const response = await api.get(`product/${location.state.id}`);
@@ -38,6 +39,11 @@ const Product = () => {
   const handleChange = (thumbnail) => {
     setDisplayImage(thumbnail);
   };
+
+  const handleDelete = async () => {
+   await api.delete(`/product/${location.state.id}`)
+   .then(navigate("/homestore"))
+  }
 
   const adicionarAoCarrinho = () => {
     dispatch(addToCart(product));
@@ -192,17 +198,14 @@ const Product = () => {
                 >
                   Editar Produto
                 </Link>
-                <form
-                  action={`http://localhost:3000/img/product/${product.id}?_method=DELETE`}
-                  method="POST"
-                >
-                  <button
+               
+                  <button onClick={handleDelete}
                     type="submit"
                     // className='action_button delete'
                   >
                     Remover Produto
                   </button>
-                </form>
+
               </>
             ) : null}
           </>

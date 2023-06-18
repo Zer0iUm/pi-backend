@@ -70,39 +70,25 @@ router.get("/product/:id", productController.showById);
 // GET - EJS Update Form - View
 //router.get('/product/update/:id', productController.updateFormEJS); testeando
 
-router.get('/admin', (req, res) => {
-  const admins = [
-    { id: 1, name: 'Admin 1' },
-    { id: 2, name: 'Admin 2' },
-  ];
-  const userId = req.query.userId; 
-  const isAdmin = admins.some(admin => admin.id === parseInt(userId));
-
-  if (isAdmin) {
-    res.send('Você é um administrador.');
-  } else {
-    res.status(403).send('Acesso não autorizado.'); 
-  }
-});
-
+// AUTENTICAÇÃO COMENTADA PARA FAZER O CRUD NO FRONTEND (REACT)
 // POST - EJS Create
 router.post(
   "/product",
-  authentication,
+  /* authentication, */
   upload.any(),
   body("name").notEmpty().withMessage("Nome do Produto deve ser informado"),
   productController.createEJS
 );
 
 // PUT - EJS Update
-router.put(
+router.post(
   "/product/:id",
-  authentication,
+  /* authentication, */
   upload.any(),
   productController.updateEJS
 );
 
 // DELETE - EJS Delete
-router.delete("/product/:id", authentication, productController.deleteEJS);
+router.delete("/product/:id", /* authentication */ productController.deleteEJS);
 
 module.exports = router;

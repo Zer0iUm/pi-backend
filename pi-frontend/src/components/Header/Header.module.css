@@ -81,7 +81,7 @@ a {
 	padding: 1rem 2rem 1rem 2rem;
 	font-family: 'Lato';
 	font-size: 18px;
-	width: 100%;
+	width: 75%;
 	border-radius: 100px;
 	/* height: 20px; */
 	vertical-align: middle;
@@ -148,7 +148,7 @@ input[type='text']::-webkit-contacts-auto-fill-button {
 .search_form_button {
 	position: absolute;
 	/* margin-top: 0.2%; */
-	right: 10%;
+	right: 22%;
 	/* height: 100%; */
 	background-color: white !important;
 	border: none;
@@ -156,7 +156,7 @@ input[type='text']::-webkit-contacts-auto-fill-button {
 	color: var(--gray);
 	cursor: pointer;
 	height: 28px;
-	top: 5px;
+	top: 2px;
 }
 
 .button_seach {

@@ -46,7 +46,7 @@ const Product = () => {
   }
 
   const adicionarAoCarrinho = () => {
-    dispatch(addToCart(product));
+    dispatch(addToCart({...product, quantidade: quantidade}));
     alert('Produto adicionado ao carrinho')
   };
 

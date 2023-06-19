@@ -11,24 +11,45 @@ import { removeFromCart,   } from "../../reducer/cartSlice";
 
 const ShoppingCart = () => {
   const location = useLocation();
-  const [product, setProduct] = useState([]);
-  const [productsCart, setProductsCart] = useState();
+  const [total, setTotal] = useState([]);
+  const [productsCart, setProductsCart] = useState([]);
 
   let carrinho = useSelector((state) => state.cart);
-
+  
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
   };
 
+  const totalCart = () => {
+    let valorItem = 0;
+    let soma = 0;
+    if(productsCart.length) {
+        productsCart.map(item => {
+          valorItem = (item.price * item.quantidade)
+          soma += valorItem
+          setTotal(soma)
+        }
+      )
+    }
+  }
+  
+  useEffect(() => {
+    console.log(productsCart)
+  }, [productsCart])
+
   useEffect(() => {
     setProductsCart(carrinho);
   }, [carrinho]);
 
   useEffect(() => {
-    console.log("Produtos", productsCart);
+    totalCart()
   }, [productsCart]);
+
+  useEffect(() => {
+    console.log("cart", total)
+  }, [total]);
 
   return (
     <>
@@ -54,6 +75,8 @@ const ShoppingCart = () => {
 
       <div id="linha-horizontal1"></div>
 
+      {productsCart.length > 0 && (
+        <>
       <section className="barra_carrinho">
         <div>
           <h2 className="topo_carrinho1">PRODUTO</h2>
@@ -108,8 +131,8 @@ const ShoppingCart = () => {
                 </section>
               </div>
             </div>
-            <div class="valor_unitário">R$ 00,00</div>
-            <div class="valor_total">R$ 00,00</div>
+            <div class="valor_unitário">R$ {product.price}</div>
+            <div class="valor_total">R$ {((product.price) * (product.quantidade)).toFixed(2)}</div>
           </div>
         </>
       ))}
@@ -119,7 +142,7 @@ const ShoppingCart = () => {
         <div className="soma_carrinho">
           <div className="subtotal">
             <div>
-              <span className="subtil">SUBTOTAL</span>
+              <span className="subtil">R$ {total > 0 && total.toFixed(2)}</span>
             </div>
             <div>
               <h2 className="topo_carrinho">
@@ -154,6 +177,16 @@ const ShoppingCart = () => {
           </div>
         </div>
       </section>
+        </>
+      )}
+
+      {productsCart.length == 0 && (
+        <section className="carrinho_compra">
+          <p>Você ainda não adicionou produtos no seu carrinho.</p>
+        </section>
+      )}
+
+
       <Footer />
     </>
   );

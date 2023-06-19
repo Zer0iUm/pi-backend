@@ -57,9 +57,9 @@ const ProductUpdate = () => {
 			<label htmlFor="product_type_id">Tipo:</label>
                 <select
                   id="product_type_id"
-                  name="productTypeId"
+                  name="product_type_id"
                   className="form-input"
-                  value={formData.productTypeId}
+                  value={formData.product_type_id}
                   onChange={handleChange}
                 >
                   <option value={1}>Cervejas</option>

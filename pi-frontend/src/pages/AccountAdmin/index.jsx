@@ -18,7 +18,7 @@ const AccountAdmin = () => {
 
 		// Perform any additional cleanup or redirection
 		// For example, you can navigate the user to the login page
-		navigate('/homestore');
+		navigate('/login');
 	};
 
 	return (
@@ -33,8 +33,12 @@ const AccountAdmin = () => {
 				<Link className={styles.btn_user} to='/productupdate'>
 					<button>Editar produto</button>
 				</Link>
-				<Link className={styles.btn_user} to='/homestore'>
-					<button onClick={handleLogout}>Sair</button>
+				<Link
+					className={styles.btn_user}
+					to='/homestore'
+					onClick={handleLogout}
+				>
+					<button>Sair</button>
 				</Link>
 			</div>
 			<Footer />

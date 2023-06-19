@@ -55,38 +55,33 @@ const ShoppingCart = () => {
       <div id="linha-horizontal1"></div>
 
       <section className="barra_carrinho">
-        <div>
-          <h2 className="topo_carrinho1">PRODUTO</h2>
-        </div>
-        <div>
-          <h2 className="topo_carrinho">
-            <li>
-              <h2>QUANTIDADE</h2>
-            </li>
-            <li>
-              <h2>VALOR UNITÁRIO</h2>
-            </li>
-            <li>
-              <h2>VALOR TOTAL</h2>
-            </li>
-          </h2>
-        </div>
-      </section>
+       
+        <div><h2>PRODUTO</h2></div>
+      
+        <div><h2>QUANTIDADE</h2></div>
+     
+        <div><h2>VALOR UNITÁRIO</h2></div>
+     
+        <div><h2>VALOR TOTAL</h2></div>
+    
+ 
+</section>
+
 
       {productsCart?.map((product) => (
         <>
-          <div class="produto">
-            <img
+          <div className="produto">
+              <img
               class="foto_carrinho"
               src={`http://localhost:3000/img/${product.image}`}
-            />
-            <div>
-              <p class="nome_produto"> {product.name}</p>
+              />
+              < div className="registro_produto">
+              <p className="nome_produto"> {product.name}</p>
               <p className="price_product">{product.price}</p>
-              <button onClick={() => handleRemove(product.id)}>Remover</button>
+              
+            
             </div>
-          </div>
-          <div class="carrinho_direita">
+            <div class="carrinho_direita">
             <div class="container">
               <div class="row">
                 <section id="mais_menos">
@@ -95,6 +90,7 @@ const ShoppingCart = () => {
                     id="remover"
                     onclick="setQuantidade('remove')"
                   >
+                   <button className="btn_remover" onClick={() => handleRemove(product.id)}>Remover</button>
                     -
                   </div>
                   <input id="input-quantidade" type="text" value="0" min="0" />
@@ -110,6 +106,8 @@ const ShoppingCart = () => {
             </div>
             <div class="valor_unitário">R$ 00,00</div>
             <div class="valor_total">R$ 00,00</div>
+          </div>
+          
           </div>
         </>
       ))}

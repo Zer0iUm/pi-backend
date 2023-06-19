@@ -99,12 +99,6 @@ const Header = () => {
 								CARRINHO
 							</Link>
 						</li>
-
-						<li className='car'>
-							<Link to='/productregistration' className='carrinho'>
-								CADASTRAR NOVO PRODUTO
-							</Link>
-						</li>
 					</ul>
 				</div>
 			</header>

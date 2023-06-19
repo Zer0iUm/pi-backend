@@ -121,7 +121,7 @@ input[type='text']::-webkit-contacts-auto-fill-button {
 	visibility: hidden !important;
 }
 
-.search-form {
+.search_form {
 	position: relative;
 	/* display: flex; */
 	align-items: center;
@@ -145,7 +145,7 @@ input[type='text']::-webkit-contacts-auto-fill-button {
 	box-shadow: none !important;
 }
 
-.search-form_button {
+.search_form_button {
 	position: absolute;
 	/* margin-top: 0.2%; */
 	right: 10%;
@@ -159,6 +159,10 @@ input[type='text']::-webkit-contacts-auto-fill-button {
 	top: 5px;
 }
 
-.buttom-seach {
+.button_seach {
 	margin-top: 30%;
+}
+
+.login {
+	text-transform: uppercase;
 }

@@ -19,7 +19,7 @@ const Index = () => {
 				miniTitle='VOCÊ QUER UMA LATINHA?'
 				miniTitle1='BATE E VOLTA'
 				miniTitle2='TIM-TIM, TIM-TIM!'
-				title='LEVE UMA GORO MAIS LEVE'
+				title='LEVE UMA GORÓ MAIS LEVE'
 				title1='CASQUINHO RETORNÁVEL'
 				title2='UM BRINDE PRA ELA'
 				text='Conheça a nossa Goró versão latinhas de 330ml. Mais leve e compacta para levar onde você quiser!'

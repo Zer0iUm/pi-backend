@@ -47,6 +47,7 @@ const Product = () => {
 
   const adicionarAoCarrinho = () => {
     dispatch(addToCart(product));
+    alert('Produto adicionado ao carrinho')
   };
 
   useEffect(() => {
@@ -186,7 +187,7 @@ const Product = () => {
             >
               +
             </div>
-            <button onClick={adicionarAoCarrinho}>COMPRAR</button>
+            <button onClick={adicionarAoCarrinho}>ADICIONAR AO CARRINHO</button>
           </section>
           <>
             {getCookie("admin") === "1" ? (

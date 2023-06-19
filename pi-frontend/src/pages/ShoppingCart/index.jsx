@@ -7,7 +7,7 @@ import api from "../../services/api";
 import Input from "../../components/Input";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../reducer/cartSlice";
+import { removeFromCart,   } from "../../reducer/cartSlice";
 
 const ShoppingCart = () => {
   const location = useLocation();
@@ -82,7 +82,7 @@ const ShoppingCart = () => {
             />
             <div>
               <p class="nome_produto"> {product.name}</p>
-              <p class="descritivo_produto">{product.description}</p>
+              <p className="price_product">{product.price}</p>
               <button onClick={() => handleRemove(product.id)}>Remover</button>
             </div>
           </div>

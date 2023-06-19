@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = [];
 
@@ -17,7 +17,7 @@ const cartSlice = createSlice({
         reset: (state, action) => {
             return initialState;
         },
-    },
+    }
 });
 
 export const { addToCart, reset, removeFromCart } = cartSlice.actions;

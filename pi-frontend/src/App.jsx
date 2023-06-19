@@ -1,7 +1,6 @@
 import React from 'react';
 import Router from './router';
 import { Provider } from 'react-redux';
-import MyContext from './contexts/myContext';
 import store from './store';
 
 import './global.css';

@@ -7,7 +7,7 @@ import styles from '../marca.module.css';
 export default function Navbar() {
 	const navLinks = [
 		{
-			name: 'Início',
+			name: 'INÍCIO',
 			link: '#',
 		},
 		{

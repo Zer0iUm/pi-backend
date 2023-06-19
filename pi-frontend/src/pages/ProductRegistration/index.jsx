@@ -14,7 +14,6 @@ import api from "../../services/api"
 const ProductRegistration = () => {
   const navigate = useNavigate()
 
-/*   const [formData, setFormData] = useState([]); */
   const [name, setName] = useState("");
   const [productTypeId, setProductTypeId] = useState(1);
   const [price, setPrice] = useState(0);
@@ -31,12 +30,12 @@ const ProductRegistration = () => {
     if (selectedImage) formData.append("", selectedImage);
 
     try {
-      await api.post("/product", formData, {
+    await api.post("/product", formData, {
         Headers: { authentication: getCookie("authentication") },
       });
 
       alert("Produto criado com sucesso!");
-      navigate("/");
+      navigate("/homestore");
     } catch (error) {
       alert(error.response.data.error);
     }

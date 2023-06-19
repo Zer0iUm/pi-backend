@@ -9,9 +9,48 @@ import Input from "../../components/Input";
 import "./style.css";
 
 const SignUp = () => {
+  const navigate = useNavigate()
+
+  const [name, setName] = useState()
+  const [lastname, setLastname] = useState()
+  const [birthday, setBirthday] = useState()
+  const [genre, setGenre] = useState()
+  const [cpf, setCpf] = useState()
+  const [phone, setPhone] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [emailConfirm, setEmailConfirm] = useState()
+  const [pwdConfirm, setPwdConfirm] = useState()
+  const [isAdmin, setIsAdmin] = useState()
+  const [cep, setCep] = useState()
+  const [adress, setAddress] = useState()
+  const [city, setCity] = useState()
+  const [distric, setDistric] = useState()
+  const [state, setState] = useState()
+  const [number, setNumber] = useState()
+  const [complement, setComplement] = useState()
   const {register, handleSubmit, setValue, setFocus} = useForm();
-  const onSubmit = (e) => {
-    console.log(e)
+  
+  const handleSave = async () => {
+    const user = {
+      name: name,
+      lastname: lastname,
+      birthday: birthday,
+      genre: genre,
+      cpf: cpf,
+      email: email,
+      password: password,
+      is_admin: isAdmin
+    }
+    console.log(user)
+    try{
+      await api.post('/signUp', user)
+
+      alert('Usuário criado com sucesso!')
+      navigate('/homestore')
+    } catch(error){
+      alert(error.response.data.error)
+    }
   }
 
   const checkCEP = (e) => {
@@ -19,7 +58,7 @@ const SignUp = () => {
     // console.log(cep);
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(res => res.json()).then(data => {
-        console.log(data);
+/*         console.log(data); */
         setValue('address', data.logradouro);
         setValue('city', data.localidade);
         setValue('district', data.bairro);
@@ -27,6 +66,8 @@ const SignUp = () => {
         setFocus('number')
     }) 
 }
+
+
  
   return (
     <>
@@ -45,19 +86,23 @@ const SignUp = () => {
           </div>
         </div>
 
-        <form className="form" method='post' action='/signUp' onSubmit={handleSubmit(onSubmit)}>
+        <div className="form">
           <div className="teste">
             <input
               type="nome"
               placeholder="Nome"
               id="nome"
               name="name"
+              value={name}
+              onChange={e => setName(e.target.value)}
             />
             <input
               type="sobrenome"
               placeholder="Sobrenome"
               id="sobrenome"
               name="lastname"
+              value={lastname}
+              onChange={e => setLastname(e.target.value)}
             />
           </div>
           <div className="teste">
@@ -66,12 +111,16 @@ const SignUp = () => {
               placeholder="Data de Nascimento | 00/00/0000"
               id="dataNascimento"
               name="birthday"
+              value={birthday}
+              onChange={e => setBirthday(e.target.value)}
             />
             <input
               type="genero"
               placeholder="Gênero | ex: Feminino"
               id="genero"
               name="genre"
+              value={genre}
+              onChange={e => setGenre(e.target.value)}
             />
           </div>
           <div className="teste">
@@ -80,17 +129,20 @@ const SignUp = () => {
               placeholder="CPF | 000.000.000-00"
               id="CPF"
               name="cpf"
+              value={cpf}
+              onChange={e => setCpf(e.target.value)}
             />
             <input
               type="telefoneContato"
               placeholder="Telefone | (00) 00000-0000"
               id="telefoneContato"
               name="phone"
+              value={phone}
+              onChange={e => setPhone(e.target.value)}
             />
           </div>
           <span className="form__erro">Mensagem de erro</span>
-        </form>
-      </section>
+        </div>
 
      
         <div className="cadastro">
@@ -105,18 +157,23 @@ const SignUp = () => {
             <p className="cadastro__circulocinza">3</p>
           </div>
         </div>
-        <form className="form" method='post' action='/signUp' onSubmit={handleSubmit(onSubmit)}>
+        <div className="form">
             <div className="teste">
-            <input t
-            ype="email"
+            <input 
+             type="email"
              placeholder="E-mail" 
              id="email" 
-             name="email" />
+             name="email" 
+             value={email}
+             onChange={e => setEmail(e.target.value)}
+             />
 
             <input
                 type="emailConfirmar"
                 placeholder="Confirme seu e-mail"
-            />
+                value={emailConfirm}
+                onChange={e => setEmailConfirm(e.target.value)}
+                />
             </div>
             <div className="teste">
 
@@ -124,15 +181,27 @@ const SignUp = () => {
              type="password" 
              placeholder="Senha" 
              id="senha"
-              name="password" />
+             name="password" 
+             value={password}
+             onChange={e => setPassword(e.target.value)}
+             />
 
             <input
                 type="password"
                 placeholder="Confirme sua senha"
-            />
+                value={pwdConfirm}
+                onChange={e => setPwdConfirm(e.target.value)}
+                />
+
+                <input
+                type="isAdmin"
+                placeholder="Você é um administrador?(1 para Sim/0 para não)"
+                value={isAdmin}
+                onChange={e => setIsAdmin(e.target.value)}
+                />
             </div>
-      </form>
-      <section className="section__cadastro" style={{ marginBottom: "4.5rem" }}>
+      </div>
+      <section className="section__cadastro" /* style={{ marginBottom: "4.5rem" }} */>
         <div className="cadastro">
           <div className="cadastro__titulo">
             <img src="http://localhost:3000/img/casa.svg" alt="Endereço" />
@@ -145,13 +214,15 @@ const SignUp = () => {
             <p className="cadastro__circuloamarelo">3</p>
           </div>
         </div>
-        <form className="form-endereço" method='post' action='/signUp' onSubmit={handleSubmit(onSubmit)}>
+        <div className="form" method='post' action='/signUp' handleSave={handleSubmit(handleSave)}>
             <input
                 type="cep"
                 placeholder="CEP | 00000-000"
                 {...register("cep")}
                 onBlur={checkCEP}
-            />
+                value={cep}
+                onChange={e => setCep(e.target.value)}
+                />
             <div className="teste">
 
                 <input
@@ -160,7 +231,9 @@ const SignUp = () => {
                     placeholder="Cidade"
                     {...register("city")}
                     name="city" 
-                />
+                    value={city}
+                    onChange={e => setCity(e.target.value)}
+                    />
 
                 <input
                     id="state"
@@ -168,23 +241,29 @@ const SignUp = () => {
                     placeholder="Estado"
                     {...register("state")}
                     name="state" 
-                />    
+                    value={state}
+                    onChange={e => setState(e.target.value)}
+                    />    
 
             </div>
             <div className="teste">
                 
-            <input
-                id="endereco" 
-                type="endereço" 
-                placeholder="Endereço" 
-                {...register("address")}
-             />
+                <input
+                    id="endereco" 
+                    type="endereço" 
+                    placeholder="Endereço" 
+                    {...register("address")}
+                    value={adress}
+                    onChange={e => setAddress(e.target.value)}
+                    />
 
-            <input 
-                type="complemento" 
-                placeholder="Complemento" 
-                name="complement"
-             />
+                <input 
+                    type="complemento" 
+                    placeholder="Complemento" 
+                    name="complement"
+                    value={complement}
+                    onChange={e => setComplement(e.target.value)}
+                    />
             </div>
 
             <div className="teste">
@@ -192,17 +271,22 @@ const SignUp = () => {
                     type="numero" 
                     placeholder="Número" 
                     {...register("number")}
-                />
+                    value={number}
+                    onChange={e => setNumber(e.target.value)}
+                    />
 
                 <input id="bairro" 
                     type="bairro" 
                     placeholder="Bairro" 
                     {...register("district")}
-                />
+                    value={distric}
+                    onChange={e => setDistric(e.target.value)}
+                    />
             </div>
-        </form>
+        </div>
+                    </section>
         <div className="teste">
-          <button type="submit" className="cadastro__botao" onClick={handleSubmit}>
+          <button type="submit" className="cadastro__botao" onClick={handleSave}>
             CRIAR CONTA
           </button>
         </div>

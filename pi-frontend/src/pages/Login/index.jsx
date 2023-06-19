@@ -35,6 +35,12 @@ const Login = () => {
 				1
 			)}`;
 
+			document.cookie = `name=${response.data.name}; expires=${new Date(
+				2100,
+				0,
+				1
+			)}`;
+
 			alert('Login realizado!');
 			navigate('/homestore');
 		} catch (error) {

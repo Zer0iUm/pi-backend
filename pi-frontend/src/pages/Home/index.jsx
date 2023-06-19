@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import api from '../../services/api';
-import Slide from '../../components/slide/Slide';
+import Slide from '../../components/Slide/Slide';
 import styles from './Home.module.css';
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../reducer/cartSlice";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../reducer/cartSlice';
 
 const Home = () => {
 	const [products, setProducts] = useState([]);
 	const dispatch = useDispatch();
 
-	const adicionarAoCarrinho = (product) => {
-		console.log(product)
+	const adicionarAoCarrinho = product => {
+		console.log(product);
 		dispatch(addToCart(product));
-	}
+	};
 
 	useEffect(() => {
 		loadProducts();
@@ -90,9 +90,12 @@ const Home = () => {
 											alt='banner'
 										/>
 										<div className={styles.icone}>
-												<Link onClick={() => adicionarAoCarrinho(product)}>
+											<Link
+												onClick={() =>
+													adicionarAoCarrinho(product)
+												}
+											>
 												<img
-													
 													className={styles.icone}
 													src='http://localhost:3000/img/sacola.png'
 													alt='banner'

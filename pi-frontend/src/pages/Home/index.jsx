@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import api from "../../services/api";
-import Slide from "../../components/Slide/Slide";
+import Slide from "../../components/slide/Slide";
 import styles from "./Home.module.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../reducer/cartSlice";

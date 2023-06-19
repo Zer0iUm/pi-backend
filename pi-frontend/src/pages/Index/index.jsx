@@ -4,7 +4,7 @@ import AgeVerification from './components/AgeVerification';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
-import Slide from '../../components/slide/Slide';
+import Slide from '../../components/Slide/Slide';
 
 const Index = () => {
 	return (

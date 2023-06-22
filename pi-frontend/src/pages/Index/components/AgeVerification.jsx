@@ -89,7 +89,6 @@ export default function AgeVerification() {
 									className={`${styles.day} ${styles.select}`}
 									onChange={e => setDay(e.target.value)}
 								>
-									<option>DIA</option>
 									{days.map(day => {
 										return (
 											<option key={day} value={day}>

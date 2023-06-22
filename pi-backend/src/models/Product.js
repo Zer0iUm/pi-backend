@@ -17,6 +17,7 @@ module.exports = (sequelize, DataType) => {
 			ibu: DataType.INTEGER,
 			type_glass: DataType.STRING(45),
 			product_type_id: DataType.INTEGER,
+			category: DataType.STRING(100),
 		},
 		{
 			timestamps: false,

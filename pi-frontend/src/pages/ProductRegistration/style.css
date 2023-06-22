@@ -28,7 +28,7 @@
   margin-bottom: 20px;
   box-sizing: border-box;
 }
-*/ button[type="submit"] {
+.cadastrar {
   background-color: #bd2d16;
   color: #fff;
   border: none;
@@ -36,8 +36,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
-button[type="submit"]:hover {
+.cadastrar:hover {
   background-color: #f8a912;
 }
 

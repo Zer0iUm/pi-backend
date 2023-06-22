@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Filtro from "./components/FIltro/filter";
 import { useLocation } from "react-router-dom";
 import api from "../../services/api";
 import "./style.css";
@@ -31,80 +32,8 @@ const ListAcessories = () => {
         />
       </div>
 
-      <div className="filtro--cerveja--completo">
-        <div className="filtro--completo">
-          <h2 className="filtro">Filtros</h2>
-          <hr className="linha--filtro" />
-          <h3 className="produto">Produto</h3>
-          <form action="/search" method="get" className="filter-form">
-            <section>
-              <div className="camiseta">
-                <input
-                  type="checkbox"
-                  id="camiseta"
-                  name="filtro"
-                  value="camiseta"
-                  checked
-                />
-                <label for="camiseta">Camiseta</label>
-              </div>
+      <Filtro />
 
-              <div className="copo">
-                <input type="checkbox" id="copo" name="filtro" value="copo" />
-                <label for="copo">Copo</label>
-              </div>
-
-              <div className="termicos">
-                <input
-                  type="checkbox"
-                  id="termicos"
-                  name="filtro"
-                  value="termicos"
-                />
-                <label for="termicos">Térmicos</label>
-              </div>
-
-              <div className="abridor">
-                <input
-                  type="checkbox"
-                  id="abridor"
-                  name="filtro"
-                  value="abridor de cerveja"
-                />
-                <label for="abridor">Abridor de Cerveja</label>
-              </div>
-
-              <div className="balde">
-                <input type="checkbox" id="balde" name="filtro" value="balde" />
-                <label for="balde">Balde</label>
-              </div>
-            </section>
-
-            <section>
-              <h3 className="preco">Preço</h3>
-
-              <div className="menor--preco">
-                <input
-                  type="checkbox"
-                  id="menor--preco"
-                  name="filtro"
-                  value="menor preço"
-                />
-                <label for="menor--preco">Menor preço</label>
-              </div>
-
-              <div className="maior--preco">
-                <input
-                  type="checkbox"
-                  id="maior--preco"
-                  name="filtro"
-                  value="maior preço"
-                />
-                <label for="maior--preco">Maior preço</label>
-              </div>
-            </section>
-          </form>
-        </div>
         <section className="container--cervejas">
           <h1 className="acessorios">
             <span>ACESSÓRIOS</span>
@@ -160,7 +89,6 @@ const ListAcessories = () => {
             VER TODOS OS PRODUTOS
           </Link>
         </section>
-      </div>
       <Footer />
     </>
   );

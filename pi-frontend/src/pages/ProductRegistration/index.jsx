@@ -44,15 +44,6 @@ const ProductRegistration = () => {
       <Header />
 
       <h1 className="reg-h1">Cadastro de Produtos</h1>
-
-      {/*       {typeof error !== "undefined" ? (
-        <ul>
-          {error.map((error) => {
-            return <li>{error.msg}</li>;
-          })}
-        </ul>
-      ) : null}
- */}
       <form
         action="/product"
         method="POST"
@@ -124,9 +115,15 @@ const ProductRegistration = () => {
 
         <br />
 
-        <button type="submit" onClick={handleSave}>
-          Cadastrar
-        </button>
+        
+          <Link 
+            className="cadastrar"
+            to='/homestore' 
+            type="submit" 
+            onClick={handleSave}> 
+              Cadastrar
+          </Link>
+
       </form>
 
       <Footer />

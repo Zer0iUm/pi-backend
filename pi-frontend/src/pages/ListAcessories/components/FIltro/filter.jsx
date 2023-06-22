@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../../../services/api';
 
-const Filtro = () => {
+const Filtro = props => {
 	const [products, setProducts] = useState([]);
 
 	const loadProducts = async () => {
@@ -23,26 +23,17 @@ const Filtro = () => {
 
 	const handleFiltro = e => {
 		let filter = products?.filter(item => item.category == e);
-		setProducts(filter);
+		setDadosFiltrados(filter);
 		console.log(filter);
-		console.log(e);
 	};
 
-	const handleOnCheckbox = e => {
-		/*       setAcessorioSelecionados({
-        ...acessorioSelecionados,
-        [e.target.value]: e.target.checked,
-      });
+	useEffect(() => {
+		props.onFilterChange(dadosFiltrados);
+	}, [dadosFiltrados]);
 
-      if(e.targe.checked){} */
-	};
 	useEffect(() => {
 		loadProducts();
 	}, []);
-
-	useEffect(() => {
-		console.log('Filtro', products);
-	}, [products]);
 
 	return (
 		<>

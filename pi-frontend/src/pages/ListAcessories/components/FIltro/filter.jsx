@@ -9,22 +9,18 @@ const Filtro = props => {
 		setProducts(response.data);
 	};
 
-	const [acessorioSelecionados, setAcessorioSelecionados] = useState({
-		camiseta: false,
-		copo: false,
-		termicos: false,
-		abridor: false,
-		balde: false,
-		menor_preco: false,
-		maior_preco: false,
-	});
-
 	const [dadosFiltrados, setDadosFiltrados] = useState([]);
 
 	const handleFiltro = e => {
-		let filter = products?.filter(item => item.category == e);
+		// if (e.target.checked) {
+		let filter = products?.filter(item => item.category === e.target.value);
 		setDadosFiltrados(filter);
 		console.log(filter);
+		// } else {
+		// 	// If the checkbox is unchecked, set the filtered data to null or an empty array, depending on your preference
+		// 	setDadosFiltrados(products); // or setDadosFiltrados([]);
+		// 	console.log(dadosFiltrados);
+		// }
 	};
 
 	useEffect(() => {
@@ -40,13 +36,24 @@ const Filtro = props => {
 			<div className='filtro--completo'>
 				<h2 className='filtro'>Filtros</h2>
 				<hr className='linha--filtro' />
-				<h3 className='produto'>Produto</h3>
+				{/* <h3 className='produto'>Produto</h3> */}
 				<form action='/search' method='get' className='filter-form'>
 					<section>
-						<div className='camiseta'>
+						<div className='filtro'>
 							<input
-								onChange={e => handleFiltro(e.target.value)}
-								type='checkbox'
+								onChange={handleFiltro}
+								type='radio'
+								id='null'
+								name='filtro'
+								value='null'
+							/>
+							<label for='null'>Nenhum</label>
+						</div>
+
+						<div className='filtro'>
+							<input
+								onChange={handleFiltro}
+								type='radio'
 								id='camiseta'
 								name='filtro'
 								value='camiseta'
@@ -54,48 +61,48 @@ const Filtro = props => {
 							<label for='camiseta'>Camiseta</label>
 						</div>
 
-						<div className='copo'>
+						<div className='filtro'>
 							<input
-								onChange={e => handleFiltro(e.target.value)}
-								type='checkbox'
-								id='copo'
+								onChange={handleFiltro}
+								type='radio'
+								id='caixa'
 								name='filtro'
-								value='copo'
+								value='caixa'
 							/>
-							<label for='copo'>Copo</label>
+							<label for='caixa'>Caixa</label>
 						</div>
 
-						<div className='termicos'>
+						{/* <div className='filtro'>
 							<input
-								onChange={e => handleFiltro(e.target.value)}
-								type='checkbox'
+								onChange={handleFiltro}
+								type='radio'
 								id='termicos'
 								name='filtro'
 								value='termicos'
 							/>
 							<label for='termicos'>Térmicos</label>
-						</div>
+						</div> */}
 
-						<div className='abridor'>
+						{/* <div className='filtro'>
 							<input
-								onChange={e => handleFiltro(e.target.value)}
-								type='checkbox'
+								onChange={handleFiltro}
+								type='radio'
 								id='abridor'
 								name='filtro'
 								value='abridor de cerveja'
 							/>
 							<label for='abridor'>Abridor de Cerveja</label>
-						</div>
+						</div> */}
 
-						<div className='balde'>
+						<div className='filtro'>
 							<input
-								onChange={e => handleFiltro(e.target.value)}
-								type='checkbox'
-								id='balde'
+								onChange={handleFiltro}
+								type='radio'
+								id='bone'
 								name='filtro'
-								value='balde'
+								value='bone'
 							/>
-							<label for='balde'>Balde</label>
+							<label for='bone'>Boné</label>
 						</div>
 					</section>
 
@@ -104,8 +111,8 @@ const Filtro = props => {
 
 						<div className='menor_preco'>
 							<input
-								onChange={e => handleFiltro(e.target.value)}
-								type='checkbox'
+								onChange={handleFiltro}
+								type='radio'
 								id='menor_preco'
 								name='filtro'
 								value='menor preço'
@@ -115,8 +122,8 @@ const Filtro = props => {
 
 						<div className='maior_preco'>
 							<input
-								onChange={e => handleFiltro(e.target.value)}
-								type='checkbox'
+								onChange={handleFiltro}
+								type='radio'
 								id='maior_preco'
 								name='filtro'
 								value='maior preço'

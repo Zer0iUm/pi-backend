@@ -38,107 +38,109 @@ const ListAcessories = () => {
 				/>
 			</div>
 
-			<Filtro onFilterChange={handleFilterChange} />
+			<div style={{ display: 'flex' }}>
+				<Filtro onFilterChange={handleFilterChange} />
 
-			<section className='container--cervejas'>
-				<h1 className='acessorios'>
-					<span>ACESSÓRIOS</span>
-				</h1>
-				<hr className='linha--cerveja' />
+				<section className='container--cervejas'>
+					<h1 className='acessorios'>
+						<span>ACESSÓRIOS</span>
+					</h1>
+					<hr className='linha--cerveja' />
 
-				<ul className='produtos__container'>
-					{filteredData.length > 0
-						? filteredData.map(product => (
-								<li className='produto__container'>
-									<Link
-										to='/product'
-										className='link__produto'
-										state={{ id: product.id }}
-									>
-										<div className='produto__img'>
-											<img
-												className='foto'
-												src={`http://localhost:3000/img/${product.image}`}
-												alt='banner'
-											/>
-											<div className='icone'>
-												<a href='#'>
-													<img
-														className='icone'
-														src='http://localhost:3000/img/sacola.png'
-														alt='banner'
-													/>
-												</a>
+					<ul className='produtos__container'>
+						{filteredData.length > 0
+							? filteredData.map(product => (
+									<li className='produto__container'>
+										<Link
+											to='/product'
+											className='link__produto'
+											state={{ id: product.id }}
+										>
+											<div className='produto__img'>
+												<img
+													className='foto'
+													src={`http://localhost:3000/img/${product.image}`}
+													alt='banner'
+												/>
+												<div className='icone'>
+													<a href='#'>
+														<img
+															className='icone'
+															src='http://localhost:3000/img/sacola.png'
+															alt='banner'
+														/>
+													</a>
+												</div>
 											</div>
-										</div>
-										<div className='produto__conteudo'>
-											<p className='produto__nome'>
-												{product.name}
-											</p>
-											<p className='produto__descricao'>
-												{product.type}
-											</p>
-											<p className='produto__valor'>
-												R$ {product.price}
-											</p>
-										</div>
-									</Link>
-								</li>
-						  ))
-						: products.map(product => (
-								<li className='produto__container'>
-									<Link
-										to='/product'
-										className='link__produto'
-										state={{ id: product.id }}
-									>
-										<div className='produto__img'>
-											<img
-												className='foto'
-												src={`http://localhost:3000/img/${product.image}`}
-												alt='banner'
-											/>
-											<div className='icone'>
-												<a href='#'>
-													<img
-														className='icone'
-														src='http://localhost:3000/img/sacola.png'
-														alt='banner'
-													/>
-												</a>
+											<div className='produto__conteudo'>
+												<p className='produto__nome'>
+													{product.name}
+												</p>
+												<p className='produto__descricao'>
+													{product.type}
+												</p>
+												<p className='produto__valor'>
+													R$ {product.price}
+												</p>
 											</div>
-										</div>
-										<div className='produto__conteudo'>
-											<p className='produto__nome'>
-												{product.name}
-											</p>
-											<p className='produto__descricao'>
-												{product.type}
-											</p>
-											<p className='produto__valor'>
-												R$ {product.price}
-											</p>
-										</div>
-									</Link>
-								</li>
-						  ))}
-				</ul>
+										</Link>
+									</li>
+							  ))
+							: products.map(product => (
+									<li className='produto__container'>
+										<Link
+											to='/product'
+											className='link__produto'
+											state={{ id: product.id }}
+										>
+											<div className='produto__img'>
+												<img
+													className='foto'
+													src={`http://localhost:3000/img/${product.image}`}
+													alt='banner'
+												/>
+												<div className='icone'>
+													<a href='#'>
+														<img
+															className='icone'
+															src='http://localhost:3000/img/sacola.png'
+															alt='banner'
+														/>
+													</a>
+												</div>
+											</div>
+											<div className='produto__conteudo'>
+												<p className='produto__nome'>
+													{product.name}
+												</p>
+												<p className='produto__descricao'>
+													{product.type}
+												</p>
+												<p className='produto__valor'>
+													R$ {product.price}
+												</p>
+											</div>
+										</Link>
+									</li>
+							  ))}
+					</ul>
 
-				<Link
-					href='#'
-					className='produtos__botao'
-					style={{
-						display: 'block',
-						width: 'fit-content',
-						margin: '0 auto',
-						marginBottom: '60px',
-						padding: '15px 30px',
-						textAlign: 'center',
-					}}
-				>
-					VER TODOS OS PRODUTOS
-				</Link>
-			</section>
+					<Link
+						href='#'
+						className='produtos__botao'
+						style={{
+							display: 'block',
+							width: 'fit-content',
+							margin: '0 auto',
+							marginBottom: '60px',
+							padding: '15px 30px',
+							textAlign: 'center',
+						}}
+					>
+						VER TODOS OS PRODUTOS
+					</Link>
+				</section>
+			</div>
 			<Footer />
 		</>
 	);

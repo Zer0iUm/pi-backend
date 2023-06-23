@@ -44,12 +44,20 @@ export default function About() {
 
 	return (
 		<section id='info_menu'>
-			<div className={styles.btn_menu}>
+			<div
+				className={styles.btn_menu}
+				style={
+					show === 1
+						? { backgroundColor: '#bd2d16' }
+						: show === 2
+						? { backgroundColor: '#1e0202' }
+						: { backgroundColor: '#f8a912' }
+				}
+			>
 				{beers.map(beer => {
 					return (
 						<button
 							className={styles.btn_info}
-							id='title_info1'
 							onClick={e => setShow(beer.id)}
 							style={{
 								color: beer.color,

@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../../../services/api';
+import api from '../../../services/api';
 
 const Filtro = props => {
 	const [products, setProducts] = useState([]);
 
 	const loadProducts = async () => {
-		const response = await api.get(`/listAcessories`);
+		const response = await api.get(`/cervejas`);
 		setProducts(response.data);
 	};
 
 	const [dadosFiltrados, setDadosFiltrados] = useState([]);
 
 	const handleFiltro = e => {
+		console.log(e.target.value);
 		let filter = products?.filter(item => item.category === e.target.value);
 		setDadosFiltrados(filter);
 		console.log(filter);
@@ -48,59 +49,37 @@ const Filtro = props => {
 							<input
 								onChange={handleFiltro}
 								type='radio'
-								id='camiseta'
+								id='pilsen'
 								name='filtro'
-								value='camiseta'
+								value='pilsen'
 							/>
-							<label for='camiseta'>Camiseta</label>
+							<label for='pilsen'>Pilsen</label>
 						</div>
 
 						<div className='filtro'>
 							<input
 								onChange={handleFiltro}
 								type='radio'
-								id='caixa'
+								id='ipa'
 								name='filtro'
-								value='caixa'
+								value='ipa'
 							/>
-							<label for='caixa'>Caixa</label>
+							<label for='ipa'>Ipa</label>
 						</div>
-
-						{/* <div className='filtro'>
-							<input
-								onChange={handleFiltro}
-								type='radio'
-								id='termicos'
-								name='filtro'
-								value='termicos'
-							/>
-							<label for='termicos'>Térmicos</label>
-						</div> */}
-
-						{/* <div className='filtro'>
-							<input
-								onChange={handleFiltro}
-								type='radio'
-								id='abridor'
-								name='filtro'
-								value='abridor de cerveja'
-							/>
-							<label for='abridor'>Abridor de Cerveja</label>
-						</div> */}
 
 						<div className='filtro'>
 							<input
 								onChange={handleFiltro}
 								type='radio'
-								id='bone'
+								id='ale'
 								name='filtro'
-								value='bone'
+								value='ale'
 							/>
-							<label for='bone'>Boné</label>
+							<label for='ale'>Ale</label>
 						</div>
 					</section>
 
-					<section>
+					{/* <section>
 						<h3 className='preco'>Preço</h3>
 
 						<div className='menor_preco'>
@@ -124,7 +103,7 @@ const Filtro = props => {
 							/>
 							<label for='maior_preco'>Maior preço</label>
 						</div>
-					</section>
+					</section> */}
 				</form>
 			</div>
 

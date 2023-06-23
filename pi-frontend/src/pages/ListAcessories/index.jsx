@@ -8,10 +8,7 @@ import api from '../../services/api';
 import './style.css';
 
 const ListAcessories = () => {
-	const location = useLocation();
-
 	const [products, setProducts] = useState([]);
-
 	const [filteredData, setFilteredData] = useState([]);
 
 	const handleFilterChange = filteredData => {

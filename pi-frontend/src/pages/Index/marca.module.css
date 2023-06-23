@@ -140,6 +140,7 @@ header {
 		rgb(237, 232, 225),
 		rgb(244, 241, 237)
 	);
+	padding-bottom: 2rem;
 }
 
 .logo {
@@ -205,6 +206,7 @@ nav ul.nav_icones i {
 	flex-direction: row;
 	width: 100vw;
 	justify-content: space-evenly;
+	border-bottom: 2px solid white;
 }
 
 .btn_info {
@@ -222,6 +224,7 @@ div.show_info {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	padding-bottom: 2rem;
 }
 
 .show_info p {

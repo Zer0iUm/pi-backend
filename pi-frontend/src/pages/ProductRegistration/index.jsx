@@ -18,6 +18,7 @@ const ProductRegistration = () => {
 	const [description, setDescription] = useState('');
 	const [selectedImage, setSelectedImage] = useState();
 	const [category, setCategory] = useState('');
+	const [type, setType] = useState('');
 
 	const handleSave = async e => {
 		const formData = new FormData();
@@ -26,6 +27,7 @@ const ProductRegistration = () => {
 		formData.append('description', description);
 		formData.append('price', price);
 		formData.append('category', category);
+		formData.append('type', type);
 
 		// name: DataType.STRING(45),
 		// 	price: DataType.DECIMAL(10, 2),
@@ -84,7 +86,12 @@ const ProductRegistration = () => {
 					name='product_type_id'
 					className='reg-select'
 					value={productTypeId}
-					onChange={e => setProductTypeId(e.target.value)}
+					onChange={e => {
+						setProductTypeId(e.target.value);
+						if (e.target.value === '1') setType('Cervejas');
+						if (e.target.value === '2') setType('Acessórios');
+						if (e.target.value === '3') setType('Kits');
+					}}
 				>
 					<option value='1'>Cerveja</option>
 					<option value='2'>Acessórios</option>

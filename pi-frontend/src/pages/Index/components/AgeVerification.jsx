@@ -135,9 +135,9 @@ export default function AgeVerification() {
 						</div>
 					</section>
 					<div className={styles.divider}>
-						<hr className={styles.amarelo} />
-						<hr className={styles.vermelho} />
-						<hr className={styles.preto} />
+						<hr className='amarelo' />
+						<hr className='vermelho' />
+						<hr className='preto' />
 					</div>
 
 					<button id={styles.btn_popup} onClick={handleAge}>

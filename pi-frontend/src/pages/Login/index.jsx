@@ -77,9 +77,9 @@ const Login = () => {
 						onChange={e => setPwd(e.target.value)}
 						value={pwd}
 					/>
-					<a href='#' className={styles.esqueci__senha}>
+					{/* <a href='#' className={styles.esqueci__senha}>
 						Esqueci a minha senha
-					</a>
+					</a> */}
 					<span className={styles.form__erro}></span>
 					<button
 						type='submit'

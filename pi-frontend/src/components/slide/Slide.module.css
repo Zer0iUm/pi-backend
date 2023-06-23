@@ -18,4 +18,6 @@
 	position: absolute;
 	top: 50%;
 	left: 55%;
+	max-width: 350px;
+	text-align: left;
 }

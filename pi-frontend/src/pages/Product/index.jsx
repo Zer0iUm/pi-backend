@@ -80,11 +80,9 @@ const Product = () => {
 								handleChange(
 									`http://localhost:3000/img/${product.image}`
 								);
-								{
-									setActiveImage1(true);
-									setActiveImage2(false);
-									setActiveImage3(false);
-								}
+								setActiveImage1(true);
+								setActiveImage2(false);
+								setActiveImage3(false);
 							}}
 						/>
 						<img
@@ -99,11 +97,9 @@ const Product = () => {
 								handleChange(
 									'http://localhost:3000/img/double.png'
 								);
-								{
-									setActiveImage1(false);
-									setActiveImage2(true);
-									setActiveImage3(false);
-								}
+								setActiveImage1(false);
+								setActiveImage2(true);
+								setActiveImage3(false);
 							}}
 						/>
 						<img
@@ -118,11 +114,9 @@ const Product = () => {
 								handleChange(
 									'http://localhost:3000/img/american pale ale.png'
 								);
-								{
-									setActiveImage1(false);
-									setActiveImage2(false);
-									setActiveImage3(true);
-								}
+								setActiveImage1(false);
+								setActiveImage2(false);
+								setActiveImage3(true);
 							}}
 						/>
 					</div>
@@ -259,9 +253,11 @@ const Product = () => {
 				<hr className={styles.divisao} />
 				<ul className='produtos__container'>
 					{Array.from({ length: 4 }, (item, index) => {
-						const iRandom = Math.floor(
+						{
+							/* const iRandom = Math.floor(
 							Math.random() * allProducts.length
-						);
+						); */
+						}
 						return (
 							<li className='produto__container'>
 								<Link

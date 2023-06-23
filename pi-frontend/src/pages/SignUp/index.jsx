@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import api from '../../services/api';
-import Input from '../../components/Input';
 import './style.css';
 
 const SignUp = () => {

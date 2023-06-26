@@ -19,6 +19,9 @@ const ProductRegistration = () => {
 	const [selectedImage, setSelectedImage] = useState();
 	const [category, setCategory] = useState('');
 	const [type, setType] = useState('');
+	// const [abv, setType] = useState('');
+	// const [type, setType] = useState('');
+	// const [type, setType] = useState('');
 
 	const handleSave = async e => {
 		const formData = new FormData();
@@ -28,6 +31,9 @@ const ProductRegistration = () => {
 		formData.append('price', price);
 		formData.append('category', category);
 		formData.append('type', type);
+		// formData.append('abv', abv);
+		// formData.append('ibu', ibu);
+		// formData.append('type_glass', type_glass);
 
 		// name: DataType.STRING(45),
 		// 	price: DataType.DECIMAL(10, 2),

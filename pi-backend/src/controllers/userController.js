@@ -18,11 +18,12 @@ const UserController = {
 					{ id: user.id, email: user.email },
 					'segredo'
 				); // gera o token do usuário com JWT
-				console.log(user.is_admin);
+				console.log('backend', user.id);
 				res.status(200).json({
 					token,
 					admin: user.is_admin,
 					name: user.name,
+					id: user.id,
 				});
 			} else
 				res.status(400).json({ error: 'Usuário ou Senha incorretos!' });

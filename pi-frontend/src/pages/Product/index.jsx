@@ -12,6 +12,35 @@ import { addToCart } from '../../reducer/cartSlice';
 import styles from './Product.module.css';
 
 const Product = () => {
+	// const [id, setId] = useState(1);
+	// const [user_id, setUser_id] = useState('1');
+	// const [total, setTotal] = useState(0);
+	// const [status, setStatus] = useState(true);
+	// const [shipment_price, setShipment_price] = useState(0);
+
+	// const handleSave = async e => {
+	// 	const formData = new FormData();
+	// 	formData.append('id', id);
+	// 	formData.append('user_id', getCookie('id'));
+	// 	formData.append('total', price);
+	// 	formData.append('status', status);
+	// 	formData.append('shipment_price', shipment_price);
+	// 	formData.append('product_id', product.id);
+
+	// 	try {
+	// 		await api.post('/cart', formData, {
+	// 			Headers: { authentication: getCookie('authentication') },
+	// 		});
+
+	// 		alert('Produto adicionado ao carrinho!');
+	// 		// navigate('/homestore');
+	// 	} catch (error) {
+	// 		alert(error.response.data.error);
+	// 	}
+	// 	console.log('FIM DA ADD CART');
+	// 	console.log('form', formData);
+	// };
+
 	const [product, setProduct] = useState([]);
 	const [allProducts, setAllProducts] = useState([]);
 	const [activeImage1, setActiveImage1] = useState(true);
@@ -46,7 +75,8 @@ const Product = () => {
 			.then(navigate('/homestore'));
 	};
 
-	const adicionarAoCarrinho = () => {
+	const adicionarAoCarrinho = async () => {
+		// await api.get('/cart');
 		if (getCookie('name')) {
 			dispatch(addToCart({ ...product, quantidade: quantidade }));
 			alert('Produto adicionado ao carrinho');
@@ -131,7 +161,7 @@ const Product = () => {
 					<h1>{product.name}</h1>
 					<h2>{product.type}</h2>
 					<p>{product.description}</p>
-					{product.product_type_id === 1 ? (
+					{product.user_id === 1 ? (
 						<table id={styles.info_tabela}>
 							<tr>
 								<th>% de álcool</th>
@@ -211,7 +241,11 @@ const Product = () => {
 						>
 							+
 						</div>
-						<button onClick={adicionarAoCarrinho}>
+						<button
+							// onClick={handleSave}
+							onClick={adicionarAoCarrinho}
+							state={{ id: getCookie('id') }}
+						>
 							ADICIONAR AO CARRINHO
 						</button>
 					</section>

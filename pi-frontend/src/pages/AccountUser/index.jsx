@@ -27,7 +27,7 @@ const AccountUser = () => {
 			<div className={styles.mainContainer}>
 				<h1>Olá, {getCookie('name')}</h1>
 
-				<Link className={styles.btn_user} id='btn-editUser' to='#'>
+				{/* <Link className={styles.btn_user} id='btn-editUser' to='#'>
 					<button>Alterar dados</button>
 				</Link>
 				<form
@@ -54,7 +54,7 @@ const AccountUser = () => {
 					/>
 
 					<input type='submit' value='Save Changes' />
-				</form>
+				</form> */}
 				<Link
 					className={styles.btn_user}
 					to='/homestore'

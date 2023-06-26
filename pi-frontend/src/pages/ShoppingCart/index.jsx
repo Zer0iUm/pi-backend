@@ -8,6 +8,7 @@ import Input from '../../components/Input';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart } from '../../reducer/cartSlice';
+import { getCookie } from '../../utils';
 
 const ShoppingCart = () => {
 	const location = useLocation();
@@ -49,6 +50,19 @@ const ShoppingCart = () => {
 	useEffect(() => {
 		console.log('cart', total);
 	}, [total]);
+
+	const user_id = getCookie('id');
+	const addToCart = async () => {
+		console.log('dentro do add to cart');
+		try {
+			const response = await api.post('/cart', productsCart, user_id);
+			console.log('Products added to cart:', response.data);
+			// Optionally, you can handle a successful response here, such as displaying a success message to the user.
+		} catch (error) {
+			console.error('Error adding products to cart:', error);
+			// Optionally, you can handle an error response here, such as displaying an error message to the user.
+		}
+	};
 
 	return (
 		<>
@@ -192,17 +206,17 @@ const ShoppingCart = () => {
 									<span>TOTAL</span>
 									<span>R$ 00,00</span>
 								</div>
-								<div className='alinhamento_botao'>
-									<div></div>
-									<div>
-										<button
-											className='botao_amarelo'
-											type='button'
-										>
-											FINALIZAR COMPRA
-										</button>
-									</div>
+								{/* <div className='alinhamento_botao'> */}
+								<div>
+									<button
+										className='botao_amarelo'
+										type='button'
+										onClick={addToCart}
+									>
+										FINALIZAR COMPRA
+									</button>
 								</div>
+								{/* </div> */}
 							</div>
 						</div>
 					</section>

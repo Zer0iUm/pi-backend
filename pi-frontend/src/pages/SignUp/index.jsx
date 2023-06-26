@@ -29,12 +29,15 @@ const SignUp = () => {
 	const [number, setNumber] = useState();
 	const [complement, setComplement] = useState();
 	const { register, handleSubmit, setValue, setFocus } = useForm();
+	const [day, setDay] = useState();
+	const [month, setMonth] = useState();
+	const [year, setYear] = useState();
 
 	const handleSave = async () => {
 		const user = {
 			name: name,
 			lastname: lastname,
-			birthday: birthday,
+			birthday: `${year}-${month}-${day}`,
 			genre: genre,
 			cpf: cpf,
 			email: email,
@@ -108,12 +111,28 @@ const SignUp = () => {
 					</div>
 					<div className='teste'>
 						<input
-							type='dataNascimento'
-							placeholder='Data de Nascimento | 00/00/0000'
-							id='dataNascimento'
-							name='birthday'
-							value={birthday}
-							onChange={e => setBirthday(e.target.value)}
+							type='text'
+							placeholder='Dia'
+							id='day'
+							name='day'
+							value={day}
+							onChange={e => setDay(e.target.value)}
+						/>
+						<input
+							type='text'
+							placeholder='Mês'
+							id='month'
+							name='month'
+							value={month}
+							onChange={e => setMonth(e.target.value)}
+						/>
+						<input
+							type='text'
+							placeholder='Ano'
+							id='year'
+							name='year'
+							value={year}
+							onChange={e => setYear(e.target.value)}
 						/>
 						<input
 							type='genero'

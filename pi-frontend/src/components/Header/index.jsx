@@ -10,7 +10,6 @@ import { getCookie } from '../../utils';
 
 const Header = () => {
 	const [keywords, setKeywords] = useState();
-	const [username, setUsername] = useState('');
 
 	useEffect(() => {}, []);
 

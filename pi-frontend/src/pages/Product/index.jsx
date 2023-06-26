@@ -126,11 +126,12 @@ const Product = () => {
 						id={styles.display}
 					/>
 				</section>
+
 				<section id={styles.info_produto}>
 					<h1>{product.name}</h1>
 					<h2>{product.type}</h2>
 					<p>{product.description}</p>
-					{product.type === '1' ? (
+					{product.product_type_id === 1 ? (
 						<table id={styles.info_tabela}>
 							<tr>
 								<th>% de álcool</th>
@@ -138,9 +139,9 @@ const Product = () => {
 								<th>Tipo de copo</th>
 							</tr>
 							<tr>
-								<td>{product.abv}</td>
+								<td>{product.abv}%</td>
 								<td>{product.ibu}</td>
-								<td>{product.typeGlass}</td>
+								<td>{product.type_glass}</td>
 							</tr>
 						</table>
 					) : null}
@@ -216,13 +217,15 @@ const Product = () => {
 					</section>
 					<>
 						{getCookie('admin') === '1' ? (
-							<>
+							<div className={styles.admin}>
 								<Link
 									state={{ id: product.id }}
 									to={`/productupdate`}
-									className='action-button edit'
+									className='action-button edit admin'
 								>
-									Editar Produto
+									<button className={styles.editar}>
+										Editar Produto
+									</button>
 								</Link>
 
 								<button
@@ -232,7 +235,7 @@ const Product = () => {
 								>
 									Remover Produto
 								</button>
-							</>
+							</div>
 						) : null}
 					</>
 				</section>
